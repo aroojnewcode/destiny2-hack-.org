@@ -20,10 +20,15 @@ directory = "./overwatch-hack-.net/dist"
 binding = "ASSETS"
 not_found_handling = "404-page"
 html_handling = "drop-trailing-slash"
-# SEO files (sitemap, robots, sitemap-index) run through the Worker for www + apex parity.
+# Serve crawler SEO files as static assets (not Worker-first) so GSC can fetch
+# sitemaps reliably. Worker still handles www→apex + legacy sitemap redirects.
 run_worker_first = [
   "/*",
   "!/favicon.svg",
+  "!/sitemap.xml",
+  "!/sitemap-index.xml",
+  "!/sitemap.css",
+  "!/robots.txt",
   "!/_astro/*",
   "!/media/*",
   "!/videos/*",

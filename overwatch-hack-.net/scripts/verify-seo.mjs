@@ -306,8 +306,14 @@ if (!robots.includes('Sitemap: https://www.destiny2hack.org/sitemap.xml')) {
 if (!robots.includes('Sitemap: https://destiny2hack.org/sitemap-index.xml')) {
   fail('robots.txt must list sitemap index for GSC')
 }
+if (!robots.includes('Sitemap: https://www.destiny2hack.org/sitemap-index.xml')) {
+  fail('robots.txt must list www sitemap index for GSC')
+}
 if (!robots.includes('Allow: /sitemap.xml')) {
   fail('robots.txt must explicitly allow /sitemap.xml')
+}
+if (!robots.includes('Allow: /sitemap-index.xml')) {
+  fail('robots.txt must explicitly allow /sitemap-index.xml')
 }
 if (!robots.includes('Allow: /videos/')) {
   fail('robots.txt must allow /videos/ for preview crawlability')

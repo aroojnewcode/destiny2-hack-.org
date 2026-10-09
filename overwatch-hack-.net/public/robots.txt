@@ -1,6 +1,7 @@
 User-agent: Googlebot
 Allow: /
 Allow: /sitemap.xml
+Allow: /sitemap-index.xml
 Allow: /robots.txt
 Allow: /media/
 Allow: /og/
@@ -9,6 +10,7 @@ Allow: /videos/
 User-agent: Google-InspectionTool
 Allow: /
 Allow: /sitemap.xml
+Allow: /sitemap-index.xml
 Allow: /robots.txt
 Allow: /media/
 Allow: /og/
@@ -17,6 +19,7 @@ Allow: /videos/
 User-agent: Bingbot
 Allow: /
 Allow: /sitemap.xml
+Allow: /sitemap-index.xml
 Allow: /robots.txt
 Allow: /media/
 Allow: /og/
@@ -25,6 +28,7 @@ Allow: /videos/
 User-agent: *
 Allow: /
 Allow: /sitemap.xml
+Allow: /sitemap-index.xml
 Allow: /robots.txt
 Allow: /media/
 Allow: /og/
@@ -35,3 +39,4 @@ Disallow: /404.html
 Sitemap: https://destiny2hack.org/sitemap.xml
 Sitemap: https://www.destiny2hack.org/sitemap.xml
 Sitemap: https://destiny2hack.org/sitemap-index.xml
+Sitemap: https://www.destiny2hack.org/sitemap-index.xml

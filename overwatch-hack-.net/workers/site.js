@@ -103,7 +103,17 @@ export default {
       }
     }
 
-    const assetResponse = await assetsFetch(env, request, url.pathname + url.search)
+    let assetResponse
+    try {
+      assetResponse = await assetsFetch(env, request, url.pathname + url.search)
+    } catch {
+      // Never 500 crawler SEO files — retry without query string.
+      if (isSeoCrawlerFile(url.pathname)) {
+        assetResponse = await assetsFetch(env, request, url.pathname)
+      } else {
+        throw new Error('ASSETS fetch failed')
+      }
+    }
     const response = withHtmlCharset(assetResponse)
 
     // Help crawlers + Seobility: advertise preferred host + self-canonical
@@ -113,6 +123,11 @@ export default {
     }
     if (url.pathname === '/sitemap.xml' || url.pathname === '/sitemap-index.xml') {
       headers.set('content-type', 'application/xml; charset=utf-8')
+      headers.set('Cache-Control', 'public, max-age=3600')
+      headers.set('X-Content-Type-Options', 'nosniff')
+    }
+    if (url.pathname === '/robots.txt') {
+      headers.set('content-type', 'text/plain; charset=utf-8')
     }
     const contentType = headers.get('content-type') || ''
     if (contentType.includes('text/html')) {
