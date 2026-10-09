@@ -1,0 +1,213 @@
+# Cloudflare Workers/Pages redirects (static files always win over these rules).
+# Host www/HTTP → HTTPS apex is handled by workers/site.js (not_found_handling serves 404.html).
+
+# Legacy CS2 product URLs → Destiny 2 Hack
+/cs2-hack  /destiny-2-hack  301
+
+# Legacy CS2 media paths → Destiny 2 assets
+/media/cs2-wallhack-players.png  /media/destiny-wallhack-players.png  301
+/media/cs2-esp-street.png  /media/destiny-esp-street.png  301
+/media/cs2-esp-health.jpg  /media/destiny-esp-aimbot.png  301
+/media/cs2-radar-skeleton.png  /media/destiny-radar-esp.png  301
+/media/cs2-hero-poster.jpg  /media/destiny-hero-poster.jpg  301
+/media/cs2-product-poster.jpg  /media/destiny-product-poster.jpg  301
+/videos/cs2-hero-loop.mp4  /videos/destiny-hero-loop.mp4  301
+/videos/cs2-product-loop.mp4  /videos/destiny-product-loop.mp4  301
+/cs2-hacks  /destiny-2-hack  301
+/cs2-cheats  /destiny-2-hack  301
+/counter-strike-2-hack  /destiny-2-hack  301
+
+# Trailing-slash canonicalization
+/overwatch-hack/  /destiny-2-hack  301
+/dayz-cheats  /destiny-2-hack  301
+/dayz-cheats/  /destiny-2-hack  301
+/home  /  301
+/home/  /  301
+/blogs/  /blogs  301
+/forums/  /forums  301
+/reviews/  /reviews  301
+/faq/  /faq  301
+/support/  /support  301
+/privacy/  /privacy  301
+/terms/  /terms  301
+/refunds/  /refunds  301
+/refund/  /refunds  301
+/refund-policy  /refunds  301
+/refund-policy/  /refunds  301
+/privacy-policy  /privacy  301
+/privacy-policy/  /privacy  301
+/terms-of-use  /terms  301
+/terms-of-use/  /terms  301
+/terms-of-service  /terms  301
+/terms-of-service/  /terms  301
+
+# Primary SEO keyword variants → product or home
+/dayz-hacks  /destiny-2-hack  301
+/dayz-hacks/  /destiny-2-hack  301
+/dayz-hack  /destiny-2-hack  301
+/dayz-hack/  /destiny-2-hack  301
+/dayz-cheat  /destiny-2-hack  301
+/dayz-cheat/  /destiny-2-hack  301
+/dayz-standalone-cheats  /destiny-2-hack  301
+/dayz-standalone-cheats/  /destiny-2-hack  301
+/dayz-standalone-cheat  /destiny-2-hack  301
+/dayz-standalone-cheat/  /destiny-2-hack  301
+/dayz-standalone-hacks  /destiny-2-hack  301
+/dayz-standalone-hacks/  /destiny-2-hack  301
+/dayz-standalone-hack  /destiny-2-hack  301
+/dayz-standalone-hack/  /destiny-2-hack  301
+/cheats-dayz  /destiny-2-hack  301
+/cheats-dayz/  /destiny-2-hack  301
+/hacks-dayz  /destiny-2-hack  301
+/hacks-dayz/  /destiny-2-hack  301
+/dayz-aimbot  /destiny-2-hack  301
+/dayz-aimbot/  /destiny-2-hack  301
+/dayz-esp  /destiny-2-hack  301
+/dayz-esp/  /destiny-2-hack  301
+/dayz-loot-esp  /destiny-2-hack  301
+/dayz-loot-esp/  /destiny-2-hack  301
+/dayz-wallhack  /destiny-2-hack  301
+/dayz-wallhack/  /destiny-2-hack  301
+/dayz-radar  /destiny-2-hack  301
+/dayz-radar/  /destiny-2-hack  301
+/dayz-radar-hack  /destiny-2-hack  301
+/dayz-radar-hack/  /destiny-2-hack  301
+/dayz-spoofer  /destiny-2-hack  301
+/dayz-spoofer/  /destiny-2-hack  301
+/undetected-dayz-cheats  /destiny-2-hack  301
+/undetected-dayz-cheats/  /destiny-2-hack  301
+/undetected-dayz-hacks  /destiny-2-hack  301
+/undetected-dayz-hacks/  /destiny-2-hack  301
+/battleye-dayz-cheats  /destiny-2-hack  301
+/battleye-dayz-cheats/  /destiny-2-hack  301
+/buy-dayz-cheats  /  301
+/buy-dayz-cheats/  /  301
+/buy-dayz-hacks  /  301
+/buy-dayz-hacks/  /  301
+/guides  /blogs  301
+/guides/  /blogs  301
+/features-list  /blogs/features-list  301
+/setup  /blogs/complete-setup  301
+/dayz-setup  /blogs/complete-setup  301
+/dayz-cheats-setup  /blogs/complete-setup  301
+
+# Legacy guide URLs lived under /forums — now separate /blogs articles
+/forums/cheat-price  /blogs/cheat-price  301
+/forums/features-list  /blogs/features-list  301
+/forums/aimbot-settings  /blogs/aimbot-settings  301
+/forums/esp-wallhack-guide  /blogs/esp-wallhack-guide  301
+/forums/radar-hack-guide  /blogs/radar-hack-guide  301
+/forums/hotkeys  /blogs/hotkeys  301
+/forums/complete-setup  /blogs/complete-setup  301
+/forums/windows-setup  /blogs/windows-setup  301
+/forums/disable-antivirus  /blogs/disable-antivirus  301
+/forums/stream-proof-setup  /blogs/stream-proof-setup  301
+/forums/anti-cheat-status  /blogs/anti-cheat-status  301
+/forums/undetected-status  /blogs/undetected-status  301
+/forums/match-play-guide  /blogs/match-play-guide  301
+/forums/loader-errors  /blogs/loader-errors  301
+
+# Blog/forum short-slug aliases
+/forums/setup  /blogs/complete-setup  301
+/forums/features  /blogs/features-list  301
+/forums/aimbot  /blogs/aimbot-settings  301
+/forums/esp  /blogs/esp-wallhack-guide  301
+/forums/wallhack  /blogs/esp-wallhack-guide  301
+/forums/radar  /blogs/radar-hack-guide  301
+/forums/antivirus  /blogs/disable-antivirus  301
+/forums/defender  /blogs/disable-antivirus  301
+/forums/windows  /blogs/windows-setup  301
+/forums/stream-proof  /blogs/stream-proof-setup  301
+/forums/battleye  /blogs/anti-cheat-status  301
+/forums/undetected  /blogs/undetected-status  301
+/forums/loader  /blogs/loader-errors  301
+/forums/survival  /blogs/match-play-guide  301
+/forums/loot-run  /blogs/match-play-guide  301
+/blogs/setup  /blogs/complete-setup  301
+/blogs/features  /blogs/features-list  301
+
+# Legacy Tarkov slugs → Destiny 2 Hack product
+/tarkov-cheats  /destiny-2-hack  301
+/tarkov-cheats/  /destiny-2-hack  301
+/eft-cheats  /destiny-2-hack  301
+/eft-cheats/  /destiny-2-hack  301
+/escape-from-tarkov-cheats  /destiny-2-hack  301
+/escape-from-tarkov-cheats/  /destiny-2-hack  301
+/tarkov-hacks  /destiny-2-hack  301
+/tarkov-hacks/  /destiny-2-hack  301
+/eft-hacks  /destiny-2-hack  301
+/eft-hacks/  /destiny-2-hack  301
+/escape-from-tarkov-hacks  /destiny-2-hack  301
+/escape-from-tarkov-hacks/  /destiny-2-hack  301
+/tarkov-aimbot  /destiny-2-hack  301
+/tarkov-esp  /destiny-2-hack  301
+/tarkov-wallhack  /destiny-2-hack  301
+/tarkov-radar  /destiny-2-hack  301
+/eft-aimbot  /destiny-2-hack  301
+/eft-esp  /destiny-2-hack  301
+/eft-wallhack  /destiny-2-hack  301
+/buy-tarkov-cheats  /  301
+/buy-tarkov-cheats/  /  301
+/buy-eft-cheats  /  301
+/buy-eft-cheats/  /  301
+
+# Legacy Warzone slugs → Destiny 2 Hack product
+/warzone-cheats  /destiny-2-hack  301
+/warzone-cheats/  /destiny-2-hack  301
+/warzone-hacks  /destiny-2-hack  301
+/warzone-hacks/  /destiny-2-hack  301
+/warzone-aimbot  /destiny-2-hack  301
+/warzone-esp  /destiny-2-hack  301
+/warzone-wallhack  /destiny-2-hack  301
+/isle-cheats  /destiny-2-hack  301
+/isle-cheats/  /destiny-2-hack  301
+/wardogs-hacks  /destiny-2-hack  301
+/wardogs-hacks/  /destiny-2-hack  301
+/buy-warzone-cheats  /  301
+/buy-warzone-cheats/  /  301
+
+# Legacy forum/guide slugs → blogs
+/forums/ricochet-status  /blogs/anti-cheat-status  301
+/forums/ricochet-status/  /blogs/anti-cheat-status  301
+/forums/battleye-status  /blogs/anti-cheat-status  301
+/forums/battleye-status/  /blogs/anti-cheat-status  301
+/forums/vac-status  /blogs/anti-cheat-status  301
+/forums/vac-status/  /blogs/anti-cheat-status  301
+/forums/ranked-play-guide  /blogs/match-play-guide  301
+/forums/ranked-play-guide/  /blogs/match-play-guide  301
+/forums/loot-run-guide  /blogs/match-play-guide  301
+/forums/loot-run-guide/  /blogs/match-play-guide  301
+/forums/survival-guide  /blogs/match-play-guide  301
+/forums/survival-guide/  /blogs/match-play-guide  301
+/forums/raid-play-guide  /blogs/match-play-guide  301
+/forums/raid-play-guide/  /blogs/match-play-guide  301
+
+# Legacy article/blog aliases → blogs index or slug
+/articles  /blogs  301
+/articles/  /blogs  301
+/articles/*  /blogs  301
+/blog/instructions  /blogs/complete-setup#quick-checklist  301
+/blog/how-to-load  /blogs/complete-setup#load-order  301
+/forums/instructions  /blogs/complete-setup#quick-checklist  301
+/forums/instructions/  /blogs/complete-setup#quick-checklist  301
+/forums/how-to-load  /blogs/complete-setup#load-order  301
+/forums/how-to-load/  /blogs/complete-setup#load-order  301
+/blog/:slug/  /blogs/:slug  301
+/blog/:slug  /blogs/:slug  301
+/blogs/:slug/  /blogs/:slug  301
+/forums/:slug/  /forums/:slug  301
+
+# Legacy / alternate sitemap URLs → single sitemap (same host — valid for www + apex GSC)
+/sitemap-pages.xml  /sitemap.xml  301
+/sitemap-products.xml  /sitemap.xml  301
+/sitemap-forums.xml  /sitemap.xml  301
+/sitemap-images.xml  /sitemap.xml  301
+/sitemap-blogs.xml  /sitemap.xml  301
+/sitemap-regions.xml  /sitemap.xml  301
+/sitemap_index.xml  /sitemap.xml  301
+/sitemap.xml/  /sitemap.xml  301
+
+/overwatch-hack  /destiny-2-hack  301
+/overwatch-hacks  /destiny-2-hack  301
+/overwatch-cheats  /destiny-2-hack  301
+/overwatch-2-hack  /destiny-2-hack  301

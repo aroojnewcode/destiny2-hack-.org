@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { ForumThreadPage } from '../../views/ForumThreadPage'
+import { FORUM_THREADS, forumPath, getForumThread } from '../../data/forums'
+import { SITE_URL, type PageSeo } from '../../data/site'
+
+export function getStaticPaths() {
+  return FORUM_THREADS.map((thread) => ({
+    params: { slug: thread.slug },
+  }))
+}
+
+const { slug } = Astro.params
+const thread = getForumThread(slug!)
+
+if (!thread) {
+  return Astro.redirect('/404')
+}
+
+const ogImage = `/og/forums-${thread.slug}.jpg`
+const pageUrl = `${SITE_URL}${forumPath(thread.slug)}`
+
+const seo: PageSeo = {
+  title: thread.metaTitle,
+  description: thread.metaDescription,
+  path: forumPath(thread.slug),
+  ogType: 'article',
+  image: ogImage,
+  imageAlt: `${thread.title} — Destiny 2 Hack forum`,
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+}
+
+const jsonLdExtra = [
+  {
+    '@type': 'DiscussionForumPosting',
+    headline: thread.title,
+    text: thread.body.join(' '),
+    datePublished: thread.date,
+    dateModified: thread.lastReplyDate,
+    author: { '@id': `${SITE_URL}/#organization` },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    mainEntityOfPage: pageUrl,
+    isPartOf: { '@id': `${SITE_URL}/forums#webpage` },
+    image: `${SITE_URL}${ogImage}`,
+    inLanguage: 'en',
+    articleSection: thread.category,
+    commentCount: thread.replies,
+    creativeWorkStatus: 'Archived',
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Forum', item: `${SITE_URL}/forums` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: thread.title,
+        item: pageUrl,
+      },
+    ],
+  },
+]
+---
+
+<BaseLayout seo={seo} jsonLdExtra={jsonLdExtra}>
+  <ForumThreadPage client:visible slug={thread.slug} />
+</BaseLayout>

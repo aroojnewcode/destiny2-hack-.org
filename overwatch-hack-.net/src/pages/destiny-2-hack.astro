@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { GameProductPage } from '../views/GameProductPage'
+import { GameProductBelowFold } from '../views/GameProductBelowFold'
+import { PRODUCT_PATH, SEO, SITE_URL } from '../data/site'
+import { productDetailJsonLd } from '../lib/seo'
+import { getGame } from '../data/games'
+
+const game = getGame('destiny-2')
+const jsonLdExtra = [
+  productDetailJsonLd(game?.status ?? 'Updating'),
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Destiny 2 Hack',
+        item: `${SITE_URL}${PRODUCT_PATH}`,
+      },
+    ],
+  },
+]
+---
+
+<BaseLayout seo={SEO.product} jsonLdExtra={jsonLdExtra}>
+  <div class="content-surface min-h-screen overflow-x-hidden text-white">
+    <GameProductPage client:idle guideSlug="destiny-2-hack" />
+    <GameProductBelowFold client:visible />
+  </div>
+</BaseLayout>
