@@ -1,0 +1,17 @@
+{
+  "name": "destiny2-hack-org",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Root deploy entry for Cloudflare — site source is overwatch-hack-.net",
+  "scripts": {
+    "build": "npm ci --prefix overwatch-hack-.net && npm run build --prefix overwatch-hack-.net",
+    "deploy": "wrangler deploy",
+    "dev": "npm run dev --prefix overwatch-hack-.net"
+  },
+  "devDependencies": {
+    "wrangler": "^4.131.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

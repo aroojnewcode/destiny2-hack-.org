@@ -1,0 +1,31 @@
+# Cloudflare runs `npx wrangler deploy` from the git repo root.
+# The Astro app lives in ./overwatch-hack-.net - build there, then publish dist.
+name = "destiny2hack"
+main = "overwatch-hack-.net/workers/site.js"
+compatibility_date = "2026-09-12"
+
+[build]
+command = "npm ci --prefix overwatch-hack-.net && npm run build --prefix overwatch-hack-.net"
+
+[[routes]]
+pattern = "destiny2hack.org"
+custom_domain = true
+
+[[routes]]
+pattern = "www.destiny2hack.org"
+custom_domain = true
+
+[assets]
+directory = "./overwatch-hack-.net/dist"
+binding = "ASSETS"
+not_found_handling = "404-page"
+html_handling = "drop-trailing-slash"
+# SEO files (sitemap, robots, sitemap-index) run through the Worker for www + apex parity.
+run_worker_first = [
+  "/*",
+  "!/favicon.svg",
+  "!/_astro/*",
+  "!/media/*",
+  "!/videos/*",
+  "!/og/*",
+]
