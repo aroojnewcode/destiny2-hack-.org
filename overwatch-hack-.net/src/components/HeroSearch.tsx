@@ -3,12 +3,25 @@ import type { KeyboardEvent, SyntheticEvent } from 'react'
 import { ArrowRight, Search } from 'lucide-react'
 import { GAMES } from '../data/games'
 
+export type HeroSearchItem = {
+  id: string
+  title: string
+  href: string
+  subtitle?: string
+  /** Extra text used only for matching (excerpt, tags, etc.) */
+  keywords?: string
+}
+
 type HeroSearchProps = {
-  /** Controlled value when parent owns the query (e.g. Articles page) */
   value?: string
   onChange?: (value: string) => void
-  /** Where Go navigates when no exact game match — default /blogs */
+  /**
+   * blogs/forums — legacy navigate on submit
+   * filter — stay on page; filter via onChange (home / blogs index)
+   */
   submitTo?: 'blogs' | 'forums' | 'filter'
+  /** Optional in-page suggestions (e.g. blog cards). When set, dropdown uses these. */
+  items?: HeroSearchItem[]
   placeholder?: string
   autoFocus?: boolean
   className?: string
@@ -18,6 +31,7 @@ export function HeroSearch({
   value,
   onChange,
   submitTo = 'blogs',
+  items,
   placeholder = 'Search Destiny 2 Hack…',
   autoFocus = false,
   className = '',
@@ -31,6 +45,10 @@ export function HeroSearch({
   const q = value !== undefined ? value : internal
 
   useEffect(() => {
+    if (value !== undefined) setInternal(value)
+  }, [value])
+
+  useEffect(() => {
     function onDoc(e: MouseEvent) {
       if (!rootRef.current?.contains(e.target as Node)) setOpen(false)
     }
@@ -38,8 +56,20 @@ export function HeroSearch({
     return () => document.removeEventListener('mousedown', onDoc)
   }, [])
 
-  const matches = useMemo(() => {
-    if (submitTo === 'filter') return []
+  const itemMatches = useMemo(() => {
+    if (!items?.length) return [] as HeroSearchItem[]
+    const term = q.trim().toLowerCase()
+    if (!term) return []
+    return items
+      .filter((item) => {
+        const hay = `${item.title} ${item.subtitle ?? ''} ${item.keywords ?? ''}`.toLowerCase()
+        return hay.includes(term)
+      })
+      .slice(0, 8)
+  }, [items, q])
+
+  const gameMatches = useMemo(() => {
+    if (items?.length || submitTo === 'filter') return []
     const term = q.trim().toLowerCase()
     if (!term) return []
     const cheatAliases = [
@@ -47,9 +77,7 @@ export function HeroSearch({
       'destiny 2 hacks',
       'destiny 2 cheat',
       'destiny 2 cheats',
-      'destiny 2 hack',
-      'destiny 2 cheats',
-      'destiny 2hack',
+      'destiny2hack',
       'cheats',
     ]
     if (cheatAliases.some((a) => a.includes(term) || term.includes(a))) {
@@ -58,7 +86,10 @@ export function HeroSearch({
     return GAMES.filter(
       (g) => g.name.toLowerCase().includes(term) || g.slug.includes(term),
     ).slice(0, 8)
-  }, [q, submitTo])
+  }, [q, submitTo, items])
+
+  const usingItems = Boolean(items?.length)
+  const matchesCount = usingItems ? itemMatches.length : gameMatches.length
 
   function setQuery(next: string) {
     if (value === undefined) setInternal(next)
@@ -67,62 +98,69 @@ export function HeroSearch({
     setActive(0)
   }
 
-  function goToHome() {
+  function goItem(href: string) {
     setOpen(false)
-    window.location.assign('/')
+    window.location.assign(href)
   }
 
   function submit(e?: SyntheticEvent) {
     e?.preventDefault()
     const term = q.trim()
+
+    // Stay on page — parent already filters from onChange as the user types.
     if (submitTo === 'filter') {
       setOpen(false)
-      const url = term ? `/blogs?q=${encodeURIComponent(term)}` : '/blogs'
-      window.history.replaceState(null, '', url)
+      if (usingItems && itemMatches.length === 1) {
+        goItem(itemMatches[0].href)
+        return
+      }
+      document.getElementById('picks')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
       document.getElementById('blog-results')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
       return
     }
+
     const exact = GAMES.find(
       (g) =>
         g.name.toLowerCase() === term.toLowerCase() ||
         g.slug === term.toLowerCase().replace(/\s+/g, '-'),
     )
-    if (exact) {
-      goToHome()
-      return
-    }
-    if (matches.length === 1) {
-      goToHome()
+    if (exact || gameMatches.length === 1) {
+      setOpen(false)
+      window.location.assign('/')
       return
     }
     if (submitTo === 'forums' || submitTo === 'blogs') {
       setOpen(false)
       window.location.assign(term ? `/blogs?q=${encodeURIComponent(term)}` : '/blogs')
-      return
     }
-    setOpen(false)
   }
 
   function onKeyDown(e: KeyboardEvent<HTMLInputElement>) {
-    if (!open && (e.key === 'ArrowDown' || e.key === 'ArrowUp') && matches.length) {
+    if (!open && (e.key === 'ArrowDown' || e.key === 'ArrowUp') && matchesCount) {
       setOpen(true)
       return
     }
     if (e.key === 'ArrowDown') {
       e.preventDefault()
-      setActive((i) => Math.min(i + 1, Math.max(matches.length - 1, 0)))
+      setActive((i) => Math.min(i + 1, Math.max(matchesCount - 1, 0)))
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       setActive((i) => Math.max(i - 1, 0))
-    } else if (e.key === 'Enter' && open && matches[active]) {
+    } else if (e.key === 'Enter' && open && matchesCount) {
       e.preventDefault()
-      goToHome()
+      if (usingItems && itemMatches[active]) {
+        goItem(itemMatches[active].href)
+      } else if (submitTo === 'filter') {
+        submit()
+      } else {
+        window.location.assign('/')
+      }
     } else if (e.key === 'Escape') {
       setOpen(false)
     }
   }
 
-  const showList = open && matches.length > 0
+  const showList = open && matchesCount > 0
 
   return (
     <div ref={rootRef} className={`relative z-50 w-full ${className || 'max-w-xl'}`.trim()}>
@@ -164,21 +202,42 @@ export function HeroSearch({
           role="listbox"
           className="search-results absolute left-0 right-0 top-full z-[60] mt-2 max-h-72 overflow-y-auto rounded-2xl border border-z-soft/20 bg-z-card py-2"
         >
-          {matches.map((game, i) => (
-            <li key={game.slug} role="option" aria-selected={i === active}>
-              <button
-                type="button"
-                onMouseEnter={() => setActive(i)}
-                onClick={goToHome}
-                className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-sm transition-colors ${
-                  i === active ? 'bg-z-accent/20 text-z-ink' : 'text-white/75 hover:bg-z-accent/10'
-                }`}
-              >
-                <span className="truncate font-medium">{game.name}</span>
-                <span className="ml-3 shrink-0 text-xs text-z-soft/70">Open buy page</span>
-              </button>
-            </li>
-          ))}
+          {usingItems
+            ? itemMatches.map((item, i) => (
+                <li key={item.id} role="option" aria-selected={i === active}>
+                  <button
+                    type="button"
+                    onMouseEnter={() => setActive(i)}
+                    onClick={() => goItem(item.href)}
+                    className={`flex w-full flex-col gap-0.5 px-4 py-2.5 text-left text-sm transition-colors ${
+                      i === active ? 'bg-z-accent/20 text-z-ink' : 'text-white/75 hover:bg-z-accent/10'
+                    }`}
+                  >
+                    <span className="truncate font-medium">{item.title}</span>
+                    {item.subtitle ? (
+                      <span className="truncate text-xs text-white/45">{item.subtitle}</span>
+                    ) : null}
+                  </button>
+                </li>
+              ))
+            : gameMatches.map((game, i) => (
+                <li key={game.slug} role="option" aria-selected={i === active}>
+                  <button
+                    type="button"
+                    onMouseEnter={() => setActive(i)}
+                    onClick={() => {
+                      setOpen(false)
+                      window.location.assign('/')
+                    }}
+                    className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-sm transition-colors ${
+                      i === active ? 'bg-z-accent/20 text-z-ink' : 'text-white/75 hover:bg-z-accent/10'
+                    }`}
+                  >
+                    <span className="truncate font-medium">{game.name}</span>
+                    <span className="ml-3 shrink-0 text-xs text-z-soft/70">Open buy page</span>
+                  </button>
+                </li>
+              ))}
         </ul>
       ) : null}
     </div>

@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import { ArrowRight, Crosshair, Eye, Radar, Sparkles } from 'lucide-react'
 import { SiteFooter } from '../components/SiteFooter'
 import { HeroSearch } from '../components/HeroSearch'
@@ -36,6 +37,29 @@ const FEATURES = [
 
 /** Below-fold home body — deferred until near viewport. */
 export function HomeBelowFold() {
+  const [blogQuery, setBlogQuery] = useState('')
+
+  const blogSearchItems = useMemo(
+    () =>
+      HOME_BLOG_CARDS.map((post) => ({
+        id: post.slug,
+        title: post.title,
+        href: blogPath(post.slug),
+        subtitle: post.tag,
+        keywords: `${post.excerpt} ${post.tag}`,
+      })),
+    [],
+  )
+
+  const filteredBlogCards = useMemo(() => {
+    const term = blogQuery.trim().toLowerCase()
+    if (!term) return HOME_BLOG_CARDS
+    return HOME_BLOG_CARDS.filter((post) => {
+      const hay = `${post.title} ${post.excerpt} ${post.tag}`.toLowerCase()
+      return hay.includes(term)
+    })
+  }, [blogQuery])
+
   return (
     <>
       <div className="hero-to-body" aria-hidden />
@@ -75,7 +99,7 @@ export function HomeBelowFold() {
                   Blogs
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  Destiny 2 Hack guides
+                  Destiny 2 Hack Blogs
                 </h2>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
                   Pricing, Aimbot, ESP, radar, Windows setup, anti-cheat status and loader fixes before
@@ -92,32 +116,44 @@ export function HomeBelowFold() {
             </div>
 
             <div className="relative z-20 mt-8 max-w-xl">
-              <HeroSearch placeholder="Search Destiny 2 hack guides…" />
+              <HeroSearch
+                value={blogQuery}
+                onChange={setBlogQuery}
+                submitTo="filter"
+                items={blogSearchItems}
+                placeholder="Search Destiny 2 Hack Blogs…"
+              />
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {HOME_BLOG_CARDS.map((post) => (
-                <a
-                  key={post.slug}
-                  href={blogPath(post.slug)}
-                  className="page-card group flex h-full flex-col rounded-2xl p-5 sm:p-6"
-                >
-                  <p className="text-xs uppercase tracking-wider text-white/45">{post.tag}</p>
-                  <p className="mt-2 text-lg font-semibold tracking-tight text-white">
-                    {post.title}
-                  </p>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-white/55">
-                    {post.excerpt}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-white transition-colors group-hover:text-white/80">
-                    Read guide
-                    <ArrowRight
-                      className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                      strokeWidth={1.75}
-                    />
-                  </span>
-                </a>
-              ))}
+            <div id="blog-results" className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredBlogCards.length ? (
+                filteredBlogCards.map((post) => (
+                  <a
+                    key={post.slug}
+                    href={blogPath(post.slug)}
+                    className="page-card group flex h-full flex-col rounded-2xl p-5 sm:p-6"
+                  >
+                    <p className="text-xs uppercase tracking-wider text-white/45">{post.tag}</p>
+                    <p className="mt-2 text-lg font-semibold tracking-tight text-white">
+                      {post.title}
+                    </p>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-white/65">
+                      {post.excerpt}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-white transition-colors group-hover:text-white/80">
+                      Read guide
+                      <ArrowRight
+                        className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                        strokeWidth={1.75}
+                      />
+                    </span>
+                  </a>
+                ))
+              ) : (
+                <p className="col-span-full text-sm text-white/55">
+                  No blogs match “{blogQuery.trim()}”. Try Aimbot, ESP, setup, or price.
+                </p>
+              )}
             </div>
 
             <div className="page-card mt-8 flex flex-col gap-4 rounded-2xl p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">

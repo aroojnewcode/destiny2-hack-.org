@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { LayoutGrid, Lock } from 'lucide-react'
+import { LayoutGrid, MessageSquare } from 'lucide-react'
 import { Navbar } from '../components/Navbar'
 import { SiteFooter } from '../components/SiteFooter'
 import {
@@ -43,17 +43,12 @@ export function ForumsPage() {
               <span className="text-white/70">Forum</span>
             </nav>
 
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-                {SITE_NAME} forum
-              </h1>
-              <span className="inline-flex items-center rounded-full border border-amber-500/50 px-3 py-1 text-xs font-medium text-amber-400">
-                Archived forum
-              </span>
-            </div>
+            <h1 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+              {SITE_NAME} forum
+            </h1>
 
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/65">
-              Read-only archive of Destiny 2 Hack help threads on{' '}
+              Destiny 2 Hack help threads on{' '}
               <a href="/" className="font-medium text-z-soft hover:text-white">
                 {SITE_HOST}
               </a>
@@ -72,7 +67,11 @@ export function ForumsPage() {
               <a href={PRODUCT_PATH} className="font-medium text-z-soft hover:text-white">
                 product page
               </a>{' '}
-              before checkout. New questions go to Support — replies here are closed.
+              before checkout. Need a live answer? Open{' '}
+              <a href="/support" className="font-medium text-z-soft hover:text-white">
+                Support
+              </a>
+              .
             </p>
 
             <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-z-soft">
@@ -81,14 +80,6 @@ export function ForumsPage() {
                   {link.label}
                 </a>
               ))}
-            </div>
-
-            <div className="mt-8 flex items-start gap-3 rounded-2xl border border-amber-500/40 bg-z-elevated/80 px-4 py-4 sm:px-5">
-              <Lock className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" strokeWidth={1.75} />
-              <p className="text-sm leading-relaxed text-amber-100/90">
-                This forum is archived. Threads are read-only:{' '}
-                <span className="font-medium text-orange-400">replies are closed</span>.
-              </p>
             </div>
 
             <div
@@ -136,8 +127,8 @@ export function ForumsPage() {
                       className="grid grid-cols-1 gap-3 px-4 py-5 transition-colors hover:bg-white/[0.03] sm:grid-cols-[minmax(0,1fr)_5.5rem_5.5rem_7rem] sm:items-center sm:gap-4 sm:px-5"
                     >
                       <div className="flex gap-3">
-                        <Lock
-                          className="mt-1 h-4 w-4 shrink-0 text-white/35"
+                        <MessageSquare
+                          className="mt-1 h-4 w-4 shrink-0 text-z-soft/70"
                           strokeWidth={1.75}
                           aria-hidden
                         />
@@ -149,12 +140,6 @@ export function ForumsPage() {
                           <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-white/50">
                             {thread.excerpt}
                           </p>
-                          <div className="mt-3 flex flex-wrap items-center gap-2">
-                            <span className="inline-flex rounded-full border border-amber-500/45 px-2.5 py-0.5 text-[11px] font-medium text-amber-400">
-                              Closed thread
-                            </span>
-                            <span className="text-xs text-white/40">{thread.closedNote}</span>
-                          </div>
                         </div>
                       </div>
 

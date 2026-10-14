@@ -113,15 +113,15 @@ if (support.includes('noindex')) fail('Support page must be indexable')
 if (!forums.includes('"@type":"BreadcrumbList"')) {
   fail('/forums must expose BreadcrumbList schema')
 }
-if (!forums.includes('Archived forum') && !forums.includes('archived')) {
-  fail('/forums must present archived forum messaging')
+if (forums.includes('Archived forum') || forums.includes('replies are closed')) {
+  fail('/forums must not present archived / closed-forum messaging')
 }
 const blogs = readFileSync(join(dist, 'blogs', 'index.html'), 'utf8')
 if (!blogs.includes('"@type":"BreadcrumbList"')) {
   fail('/blogs must expose BreadcrumbList schema')
 }
-if (!blogs.includes('Destiny 2 Hack guides')) {
-  fail('/blogs must include Destiny 2 Hack guides H1 copy')
+if (!blogs.includes('Destiny 2 Hack Blogs')) {
+  fail('/blogs must include Destiny 2 Hack Blogs H1 copy')
 }
 function decodeEntities(value = '') {
   return value

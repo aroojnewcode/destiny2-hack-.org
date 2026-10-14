@@ -237,7 +237,7 @@ for (const forum of forums) {
     source,
     'Destiny 2 FORUM',
     forum.title.replace(/\s*\|\s*.*$/, '').slice(0, 48),
-    'Archived forum · destiny2hack.org',
+    'Destiny 2 Hack forum · destiny2hack.org',
   )
   created.push(file)
 }

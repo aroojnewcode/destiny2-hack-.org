@@ -1,4 +1,4 @@
-import { ArrowLeft, Lock } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { Navbar } from '../components/Navbar'
 import { SiteFooter } from '../components/SiteFooter'
 import { CheckoutLink } from '../components/CheckoutLink'
@@ -46,13 +46,7 @@ export function ForumThreadPage({ slug }: ForumThreadPageProps) {
               <span className="text-white/70">{thread.category}</span>
             </nav>
 
-            <div className="mt-6 flex flex-wrap items-center gap-2">
-              <span className="text-xs font-medium text-z-soft">{thread.category}</span>
-              <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/45 px-2.5 py-0.5 text-[11px] font-medium text-amber-400">
-                <Lock className="h-3 w-3" strokeWidth={1.75} />
-                Closed thread
-              </span>
-            </div>
+            <p className="mt-6 text-xs font-medium text-z-soft">{thread.category}</p>
 
             <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               {thread.title}
@@ -62,18 +56,6 @@ export function ForumThreadPage({ slug }: ForumThreadPageProps) {
               {formatForumNumber(thread.replies)} replies · {formatForumNumber(thread.views)} views
               · last reply {formatForumDate(thread.lastReplyDate)} by {thread.lastReplyAuthor}
             </p>
-
-            <div className="mt-8 flex items-start gap-3 rounded-2xl border border-amber-500/40 bg-z-elevated/80 px-4 py-4">
-              <Lock className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" strokeWidth={1.75} />
-              <p className="text-sm text-amber-100/90">
-                Archived thread — {thread.closedNote.toLowerCase()}. Replies are closed. For live
-                help use{' '}
-                <a href="/support" className="font-medium text-z-soft hover:text-white">
-                  Support
-                </a>
-                .
-              </p>
-            </div>
 
             <div className="mt-10 space-y-4 text-sm leading-relaxed text-white/60 sm:text-base">
               {thread.body.map((para) => (
@@ -113,7 +95,7 @@ export function ForumThreadPage({ slug }: ForumThreadPageProps) {
         {related.length > 0 ? (
           <section className="page-band page-x border-t border-white/10 py-12">
             <div className="mx-auto max-w-5xl">
-              <h2 className="text-xl font-semibold text-white">More archived threads</h2>
+              <h2 className="text-xl font-semibold text-white">More forum threads</h2>
               <ul className="mt-6 divide-y divide-white/10 rounded-2xl border border-white/10">
                 {related.map((t) => (
                   <li key={t.slug}>

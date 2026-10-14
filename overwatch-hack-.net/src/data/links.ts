@@ -34,9 +34,9 @@ export const SITE_PAGE_LINKS = [
     description: 'Destiny 2 Hack guides — price, Aimbot, ESP, setup',
   },
   {
-    label: 'Forum archive',
+    label: 'Forum',
     to: '/forums',
-    description: 'Archived Destiny 2 Hack community threads',
+    description: 'Destiny 2 Hack community threads',
   },
   {
     label: 'Player reviews',
@@ -96,4 +96,5 @@ export function getCheckoutUrl(_productSlug?: string): string {
   return CHECKOUT_URL
 }
 
-export const CHECKOUT_REL = 'nofollow noopener noreferrer'
+/** Same-tab checkout — nofollow so Google does not index the redirect. */
+export const CHECKOUT_REL = 'nofollow'

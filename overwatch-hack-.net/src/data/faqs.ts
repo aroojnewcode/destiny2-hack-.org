@@ -6,10 +6,6 @@ export type FaqItem = {
 /** Master FAQ — visible on /faq and reused in sections. */
 export const SITE_FAQS: FaqItem[] = [
   {
-    q: 'What is Destiny 2 Hack?',
-    a: 'Destiny 2 Hack is a Destiny 2 tool on destiny2hack.org — silent-aim Aimbot, player ESP, wallhack and a 2D radar — with live anti-cheat status after game patches.',
-  },
-  {
     q: 'How much does the Destiny 2 hack cost?',
     a: 'The Destiny 2 hack starts from $35 for short access. Longer licenses cost more. Always confirm live anti-cheat status and the price on destiny2hack.org before checkout.',
   },
@@ -69,17 +65,17 @@ export const SITE_FAQS: FaqItem[] = [
 
 /** Commercial questions shown on the homepage; FAQ schema lives on /faq only. */
 export const HOME_FAQS: FaqItem[] = [
-  SITE_FAQS[1],
+  SITE_FAQS[0],
+  SITE_FAQS[3],
   SITE_FAQS[4],
-  SITE_FAQS[5],
-  SITE_FAQS[9],
+  SITE_FAQS[8],
 ]
 
 export const PRODUCT_PAGE_FAQS: FaqItem[] = [
-  SITE_FAQS[1],
+  SITE_FAQS[0],
+  SITE_FAQS[3],
   SITE_FAQS[4],
   SITE_FAQS[5],
-  SITE_FAQS[6],
-  SITE_FAQS[9],
-  SITE_FAQS[11],
+  SITE_FAQS[8],
+  SITE_FAQS[10],
 ]

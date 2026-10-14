@@ -32,13 +32,6 @@ export const SUPPORT_TOPICS: SupportTopic[] = [
       'Delivery failures and extended Updating windows are covered on the Refunds page. Include your order ID when you write in.',
     ],
   },
-  {
-    heading: 'What we can and cannot help with',
-    body: [
-      'Supported: Destiny 2 on Windows, Control, Survival and Trials of Osiris, loader and menu help for paid licenses.',
-      'Not supported: other games, cracked loaders or third-party mirrors.',
-    ],
-  },
 ]
 
 export const SUPPORT_FAQS: SupportFaq[] = [

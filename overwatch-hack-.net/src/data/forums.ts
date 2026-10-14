@@ -27,7 +27,7 @@ export const FORUM_CATEGORIES: Array<'All' | ForumCategory> = [
   'Support',
 ]
 
-/** Community Q&A archive — separate from /blogs editorial guides. */
+/** Community Q&A threads — separate from /blogs editorial guides. */
 export const FORUM_THREADS: ForumThread[] = [
   {
     slug: 'save-settings-configs',
@@ -36,15 +36,15 @@ export const FORUM_THREADS: ForumThread[] = [
       'Yes — export your Aimbot FOV, ESP colors and hotkeys from the menu, then re-import after a rebuild so you do not re-tune every update.',
     metaTitle: 'Save Destiny 2 Hack Settings/Configs | Forum',
     metaDescription:
-      'Archived Destiny 2 Hack forum thread: how to save and re-import Aimbot FOV, ESP colors and hotkey configs after a rebuild on destiny2hack.org.',
+      'Destiny 2 Hack forum thread: how to save and re-import Aimbot FOV, ESP colors and hotkey configs after a rebuild on destiny2hack.org.',
     category: 'Features',
     date: '2026-09-12',
     replies: 8,
     views: 1643,
     lastReplyDate: '2026-10-03',
     lastReplyAuthor: 'kai',
-    closed: true,
-    closedNote: 'Closed by archive',
+    closed: false,
+    closedNote: '',
     body: [
       'Yes. Open the Destiny 2 Hack menu, use the config export option, and keep the file off your Destiny 2 install folder.',
       'After a rebuild or clean reinstall, import the same file so silent-aim FOV, ESP boxes and hotkeys come back without starting from defaults.',
@@ -56,17 +56,17 @@ export const FORUM_THREADS: ForumThread[] = [
     title: 'Destiny 2 update after a game patch: do I wait?',
     excerpt:
       'Yes — wait for clear-to-load on destiny2hack.org. Loading while BattlEye shows Updating is the fastest way to waste a session.',
-    metaTitle: 'Wait After Destiny 2 Patch? | Forum Archive',
+    metaTitle: 'Wait After Destiny 2 Patch? | Forum',
     metaDescription:
-      'Archived Destiny 2 Hack forum thread: when to wait after a Destiny 2 or BattlEye patch before loading — wait for clear-to-load on destiny2hack.org.',
+      'Destiny 2 Hack forum thread: when to wait after a Destiny 2 or BattlEye patch before loading — wait for clear-to-load on destiny2hack.org.',
     category: 'Status',
     date: '2026-09-20',
     replies: 7,
     views: 2947,
     lastReplyDate: '2026-09-30',
     lastReplyAuthor: 'ghostyy',
-    closed: true,
-    closedNote: 'Closed by archive',
+    closed: false,
+    closedNote: '',
     body: [
       'When Bungie or BattlEye ships a client patch, our status page may flip to Updating while we rebuild.',
       'Do not force-load. Wait until Destiny 2 Hack shows clear-to-load on the product page, then run one clean load with overlays closed.',
@@ -80,15 +80,15 @@ export const FORUM_THREADS: ForumThread[] = [
       'Usually a render distance, team filter or stream-proof mode issue — not a missing license. Check ESP toggles before reinstalling.',
     metaTitle: 'Destiny 2 ESP Not Showing Through Walls | Forum',
     metaDescription:
-      'Archived Destiny 2 Hack forum help: player ESP or wallhack not visible in Crucible — check filters, distance and stream-proof before reinstalling.',
+      'Destiny 2 Hack forum help: player ESP or wallhack not visible in Crucible — check filters, distance and stream-proof before reinstalling.',
     category: 'Features',
     date: '2026-08-28',
     replies: 11,
     views: 2214,
     lastReplyDate: '2026-09-18',
     lastReplyAuthor: 'nox',
-    closed: true,
-    closedNote: 'Closed by archive',
+    closed: false,
+    closedNote: '',
     body: [
       'Confirm Player ESP and wallhack are enabled, team filter is set to enemies, and max distance is not set too low for the map.',
       'Stream-proof mode can hide overlays from some capture paths — turn it off once to verify ESP draws in-game.',
@@ -102,15 +102,15 @@ export const FORUM_THREADS: ForumThread[] = [
       'Add the delivery folder to exclusions, restore the file, then load again. Do not run the menu from Downloads long-term.',
     metaTitle: 'Defender Quarantined Destiny 2 Loader | Forum',
     metaDescription:
-      'Archived Destiny 2 Hack forum thread: fix Windows Defender quarantining the loader — add exclusions, restore the file, then load cleanly.',
+      'Destiny 2 Hack forum thread: fix Windows Defender quarantining the loader — add exclusions, restore the file, then load cleanly.',
     category: 'Setup',
     date: '2026-08-14',
     replies: 14,
     views: 3812,
     lastReplyDate: '2026-09-22',
     lastReplyAuthor: 'mira',
-    closed: true,
-    closedNote: 'Closed by archive',
+    closed: false,
+    closedNote: '',
     body: [
       'This is the most common setup failure. Move the official delivery folder out of Downloads, add it to Defender exclusions, then restore anything quarantined.',
       'Reboot once, launch Destiny 2 from the official client, then open the loader as admin when status is clear.',
@@ -124,15 +124,15 @@ export const FORUM_THREADS: ForumThread[] = [
       'Tighten FOV, add smoothing, use chest/nearest bone first. Blatant snaps get spectate reports faster than ESP.',
     metaTitle: 'Destiny 2 Aimbot Settings for Trials | Forum',
     metaDescription:
-      'Archived Destiny 2 Hack forum advice: quieter silent-aim settings for Trials — tighten FOV, add smoothing and prefer chest hitboxes.',
+      'Destiny 2 Hack forum advice: quieter silent-aim settings for Trials — tighten FOV, add smoothing and prefer chest hitboxes.',
     category: 'Features',
     date: '2026-09-01',
     replies: 9,
     views: 1988,
     lastReplyDate: '2026-09-25',
     lastReplyAuthor: 'veil',
-    closed: true,
-    closedNote: 'Closed by archive',
+    closed: false,
+    closedNote: '',
     body: [
       'Start conservative: small FOV, high smoothing, visible-check on, chest or nearest bone before head-only.',
       'Save a “Trials” config separate from your casual Crucible preset so you do not mix aggressive settings.',
@@ -144,17 +144,17 @@ export const FORUM_THREADS: ForumThread[] = [
     title: 'Will stream-proof hide ESP from OBS?',
     excerpt:
       'Supported overlays stay out of common capture tools when stream-proof is on — verify with a local recording before going live.',
-    metaTitle: 'Destiny 2 Stream-Proof vs OBS | Forum Archive',
+    metaTitle: 'Destiny 2 Stream-Proof vs OBS | Forum',
     metaDescription:
-      'Archived Destiny 2 Hack forum thread: using stream-proof with OBS — what overlays stay hidden and how to verify with a local recording.',
+      'Destiny 2 Hack forum thread: using stream-proof with OBS — what overlays stay hidden and how to verify with a local recording.',
     category: 'Setup',
     date: '2026-07-30',
     replies: 6,
     views: 1420,
     lastReplyDate: '2026-08-19',
     lastReplyAuthor: 'orbit',
-    closed: true,
-    closedNote: 'Closed by archive',
+    closed: false,
+    closedNote: '',
     body: [
       'Enable stream-proof in the menu, then record a short local clip in OBS. You should see clean gameplay without ESP boxes if the build supports it.',
       'Some GPU capture modes differ — if ESP still appears, switch capture method once before blaming the toggle.',
@@ -168,15 +168,15 @@ export const FORUM_THREADS: ForumThread[] = [
       'Renew from the same product checkout with the email used on the original order. Keep the order ID for Support.',
     metaTitle: 'Renew Destiny 2 Hack License | Forum',
     metaDescription:
-      'Archived Destiny 2 Hack forum thread: renew an expired license on destiny2hack.org, reuse your order email, and what to send Support.',
+      'Destiny 2 Hack forum thread: renew an expired license on destiny2hack.org, reuse your order email, and what to send Support.',
     category: 'Support',
     date: '2026-08-05',
     replies: 5,
     views: 1104,
     lastReplyDate: '2026-09-10',
     lastReplyAuthor: 'sable',
-    closed: true,
-    closedNote: 'Closed by archive',
+    closed: false,
+    closedNote: '',
     body: [
       'Open the Destiny 2 Hack product page, complete checkout again with the same email, and wait for the new delivery message.',
       'If payment succeeded but nothing arrived, contact Support with the order ID — do not buy a second time until they check.',
@@ -190,15 +190,15 @@ export const FORUM_THREADS: ForumThread[] = [
       'Clear-to-load means the current build is ready. Updating means wait — a BattlEye or client change is being rebuilt.',
     metaTitle: 'Clear-to-Load vs Updating | Destiny 2 Forum',
     metaDescription:
-      'Archived Destiny 2 Hack forum thread explaining anti-cheat status labels: clear-to-load versus Updating on destiny2hack.org.',
+      'Destiny 2 Hack forum thread explaining anti-cheat status labels: clear-to-load versus Updating on destiny2hack.org.',
     category: 'Status',
     date: '2026-09-08',
     replies: 10,
     views: 2560,
     lastReplyDate: '2026-09-28',
     lastReplyAuthor: 'rift',
-    closed: true,
-    closedNote: 'Closed by archive',
+    closed: false,
+    closedNote: '',
     body: [
       'Clear-to-load: safe to follow setup and open the loader for Destiny 2 on Windows.',
       'Updating: do not load. Watch the product / status page until it flips back.',
@@ -212,15 +212,15 @@ export const FORUM_THREADS: ForumThread[] = [
       'Exclusions first, Destiny 2 running from the official client, then loader — never the other way around on a new PC.',
     metaTitle: 'Fresh Install Load Order | Destiny 2 Forum',
     metaDescription:
-      'Archived Destiny 2 Hack setup thread: correct fresh-install load order on Windows 10/11 — exclusions first, then game, then loader.',
+      'Destiny 2 Hack setup thread: correct fresh-install load order on Windows 10/11 — exclusions first, then game, then loader.',
     category: 'Setup',
     date: '2026-07-18',
     replies: 12,
     views: 3201,
     lastReplyDate: '2026-09-15',
     lastReplyAuthor: 'pixel',
-    closed: true,
-    closedNote: 'Closed by archive',
+    closed: false,
+    closedNote: '',
     body: [
       '1) Add Defender exclusions. 2) Close Discord/NVIDIA overlays. 3) Launch Destiny 2. 4) Confirm clear-to-load. 5) Run the official loader.',
       'Skipping exclusions is why most “loader missing” tickets happen on day one.',
@@ -232,17 +232,17 @@ export const FORUM_THREADS: ForumThread[] = [
     title: 'Do I need the spoofer every session?',
     excerpt:
       'Only when the current build includes it and Support/status says hardware protection is required — not every casual load.',
-    metaTitle: 'Destiny 2 Spoofer Required? | Forum Archive',
+    metaTitle: 'Destiny 2 Spoofer Required? | Forum',
     metaDescription:
-      'Archived Destiny 2 Hack forum answer: when the spoofer is required for the current build versus optional on destiny2hack.org.',
+      'Destiny 2 Hack forum answer: when the spoofer is required for the current build versus optional on destiny2hack.org.',
     category: 'Support',
     date: '2026-08-22',
     replies: 4,
     views: 987,
     lastReplyDate: '2026-09-05',
     lastReplyAuthor: 'ash',
-    closed: true,
-    closedNote: 'Closed by archive',
+    closed: false,
+    closedNote: '',
     body: [
       'Follow the product page notes for the current build. If spoofer is listed and status asks for it, run it before the main load.',
       'If the build does not ship a spoofer, do not download third-party tools claiming to “help”.',
@@ -269,7 +269,7 @@ export function formatForumNumber(n: number) {
 }
 
 export const FORUM_QUICK_LINKS = [
-  { label: 'Destiny2 Cheats', href: PRODUCT_PATH },
+  { label: 'Product', href: PRODUCT_PATH },
   { label: 'Features', href: '/blogs/features-list' },
   { label: 'Status', href: '/blogs/anti-cheat-status' },
   { label: 'Setup', href: '/blogs/complete-setup' },

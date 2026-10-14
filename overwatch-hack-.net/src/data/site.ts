@@ -82,13 +82,13 @@ export const SEO = {
     robots: INDEX_ROBOTS,
   },
   forums: {
-    title: 'Destiny 2 Hack Forum | Archived Setup & Status Threads',
+    title: 'Destiny 2 Hack Forum | Setup, ESP & Status Threads',
     description:
-      'Archived Destiny 2 Hack forum on destiny2hack.org — read-only threads on Aimbot, ESP, BattlEye status, antivirus and loader setup. Replies are closed.',
+      'Destiny 2 Hack forum on destiny2hack.org — threads on Aimbot, ESP, BattlEye status, antivirus and loader setup before checkout.',
     path: '/forums',
     ogType: 'website',
     image: PAGE_OG.forums,
-    imageAlt: 'Destiny 2 Hack archived forum — setup, features, status and support threads',
+    imageAlt: 'Destiny 2 Hack forum — setup, features, status and support threads',
     robots: INDEX_ROBOTS,
   },
   reviews: {

@@ -1,8 +1,7 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Navbar } from '../components/Navbar'
 import { SiteFooter } from '../components/SiteFooter'
-import { BLOGS, blogPath, formatBlogDate, getBlog } from '../data/blogs'
-import { guidePath } from '../data/games'
+import { BLOGS, blogCoverImage, blogPath, formatBlogDate, getBlog } from '../data/blogs'
 import { CheckoutLink } from '../components/CheckoutLink'
 import { SITE_HOST } from '../data/site'
 import { NotFoundPage } from './NotFoundPage'
@@ -60,6 +59,18 @@ export function BlogPostPage({ slug }: BlogPostPageProps) {
               {post.excerpt}
             </p>
 
+            <figure className="mt-8 overflow-hidden rounded-2xl ring-1 ring-white/10">
+              <img
+                src={blogCoverImage(post)}
+                alt={post.title}
+                width={1200}
+                height={675}
+                decoding="async"
+                fetchPriority="high"
+                className="aspect-[16/9] w-full object-cover"
+              />
+            </figure>
+
             <div className="mt-10 space-y-10">
               {post.sections.map((section) => (
                 <section key={section.heading} id={sectionId(section.heading)} className="scroll-mt-24">
@@ -101,21 +112,15 @@ export function BlogPostPage({ slug }: BlogPostPageProps) {
                 .
               </p>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <a
-                  href={guidePath('destiny-2')}
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-white hover:bg-white/5"
-                >
+                <CheckoutLink className="cta-gradient inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-white">
                   Buy Destiny 2 Hack
-                </a>
+                </CheckoutLink>
                 <a
                   href="/support"
                   className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-white hover:bg-white/5"
                 >
                   Support
                 </a>
-                <CheckoutLink className="cta-gradient inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-white">
-                  Buy Destiny 2 Hack
-                </CheckoutLink>
               </div>
             </div>
 
