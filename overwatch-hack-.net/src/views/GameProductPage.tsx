@@ -99,7 +99,7 @@ export function GameProductPage({ guideSlug }: GameProductPageProps) {
                 Home
               </a>
               <span className="shrink-0">/</span>
-              <span className="min-w-0 text-white/70">Destiny2 Cheats</span>
+              <span className="min-w-0 text-white/70">Product</span>
             </nav>
 
             {/* Product details + image on top (single showcase — no duplicate card) */}
@@ -111,7 +111,7 @@ export function GameProductPage({ guideSlug }: GameProductPageProps) {
                 </p>
 
                 <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
-                  Buy <span className="text-z-accent">Destiny 2 Hack</span>
+                  Destiny 2 Hack — Aimbot, ESP, Wallhack & Radar
                 </h1>
 
                 <p className="mt-4 inline-flex rounded-full border border-z-accent/40 bg-z-accent/15 px-3.5 py-1.5 text-xs font-semibold text-white sm:text-sm">

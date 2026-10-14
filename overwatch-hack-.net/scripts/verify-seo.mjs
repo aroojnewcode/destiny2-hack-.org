@@ -341,6 +341,8 @@ for (const asset of [
   'public/media/destiny-product-cover.webp',
   'public/media/destiny-product-poster.webp',
   'public/media/destiny-hero-poster.webp',
+  'public/media/destiny-hero-banner.webp',
+  'public/media/destiny-hero-banner.jpg',
   'public/videos/destiny-hero-loop.mp4',
   'public/videos/destiny-product-loop.mp4',
   'public/apple-touch-icon.png',

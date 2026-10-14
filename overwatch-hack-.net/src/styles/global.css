@@ -15,7 +15,8 @@
   --bg-card: #14101f;
   --bg-card-hover: #1a1529;
   --ink: #f3f0ff;
-  --muted: rgba(214, 205, 255, 0.58);
+  /* ≥ ~4.5:1 on --bg for body/secondary copy (a11y) */
+  --muted: rgba(214, 205, 255, 0.72);
   --border: rgba(167, 139, 250, 0.14);
   --border-strong: rgba(176, 64, 251, 0.35);
   --accent: #b040fb;

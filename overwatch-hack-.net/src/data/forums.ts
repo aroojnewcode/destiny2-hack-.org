@@ -36,7 +36,7 @@ export const FORUM_THREADS: ForumThread[] = [
       'Yes — export your Aimbot FOV, ESP colors and hotkeys from the menu, then re-import after a rebuild so you do not re-tune every update.',
     metaTitle: 'Save Destiny 2 Hack Settings/Configs | Forum',
     metaDescription:
-      'Archived forum thread: how to save and re-import Destiny 2 Hack Aimbot, ESP and hotkey configs on destiny2hack.org.',
+      'Archived Destiny 2 Hack forum thread: how to save and re-import Aimbot FOV, ESP colors and hotkey configs after a rebuild on destiny2hack.org.',
     category: 'Features',
     date: '2026-09-12',
     replies: 8,
@@ -58,7 +58,7 @@ export const FORUM_THREADS: ForumThread[] = [
       'Yes — wait for clear-to-load on destiny2hack.org. Loading while BattlEye shows Updating is the fastest way to waste a session.',
     metaTitle: 'Wait After Destiny 2 Patch? | Forum Archive',
     metaDescription:
-      'Archived thread: when to wait after a Destiny 2 / BattlEye patch before loading Destiny 2 Hack on destiny2hack.org.',
+      'Archived Destiny 2 Hack forum thread: when to wait after a Destiny 2 or BattlEye patch before loading — wait for clear-to-load on destiny2hack.org.',
     category: 'Status',
     date: '2026-09-20',
     replies: 7,
@@ -80,7 +80,7 @@ export const FORUM_THREADS: ForumThread[] = [
       'Usually a render distance, team filter or stream-proof mode issue — not a missing license. Check ESP toggles before reinstalling.',
     metaTitle: 'Destiny 2 ESP Not Showing Through Walls | Forum',
     metaDescription:
-      'Archived forum help: Destiny 2 player ESP / wallhack not visible in Crucible — filters, distance and stream-proof checks.',
+      'Archived Destiny 2 Hack forum help: player ESP or wallhack not visible in Crucible — check filters, distance and stream-proof before reinstalling.',
     category: 'Features',
     date: '2026-08-28',
     replies: 11,
@@ -102,7 +102,7 @@ export const FORUM_THREADS: ForumThread[] = [
       'Add the delivery folder to exclusions, restore the file, then load again. Do not run the menu from Downloads long-term.',
     metaTitle: 'Defender Quarantined Destiny 2 Loader | Forum',
     metaDescription:
-      'Archived thread: fix Windows Defender quarantining the Destiny 2 Hack loader — exclusions, restore and clean load order.',
+      'Archived Destiny 2 Hack forum thread: fix Windows Defender quarantining the loader — add exclusions, restore the file, then load cleanly.',
     category: 'Setup',
     date: '2026-08-14',
     replies: 14,
@@ -124,7 +124,7 @@ export const FORUM_THREADS: ForumThread[] = [
       'Tighten FOV, add smoothing, use chest/nearest bone first. Blatant snaps get spectate reports faster than ESP.',
     metaTitle: 'Destiny 2 Aimbot Settings for Trials | Forum',
     metaDescription:
-      'Archived forum advice: quieter Destiny 2 silent-aim settings for Trials — FOV, smoothing and hitbox choices.',
+      'Archived Destiny 2 Hack forum advice: quieter silent-aim settings for Trials — tighten FOV, add smoothing and prefer chest hitboxes.',
     category: 'Features',
     date: '2026-09-01',
     replies: 9,
@@ -146,7 +146,7 @@ export const FORUM_THREADS: ForumThread[] = [
       'Supported overlays stay out of common capture tools when stream-proof is on — verify with a local recording before going live.',
     metaTitle: 'Destiny 2 Stream-Proof vs OBS | Forum Archive',
     metaDescription:
-      'Archived thread: using Destiny 2 Hack stream-proof with OBS — what is hidden and how to verify before streaming.',
+      'Archived Destiny 2 Hack forum thread: using stream-proof with OBS — what overlays stay hidden and how to verify with a local recording.',
     category: 'Setup',
     date: '2026-07-30',
     replies: 6,
@@ -168,7 +168,7 @@ export const FORUM_THREADS: ForumThread[] = [
       'Renew from the same product checkout with the email used on the original order. Keep the order ID for Support.',
     metaTitle: 'Renew Destiny 2 Hack License | Forum',
     metaDescription:
-      'Archived forum thread: renewing an expired Destiny 2 Hack license on destiny2hack.org and what to send Support.',
+      'Archived Destiny 2 Hack forum thread: renew an expired license on destiny2hack.org, reuse your order email, and what to send Support.',
     category: 'Support',
     date: '2026-08-05',
     replies: 5,
@@ -190,7 +190,7 @@ export const FORUM_THREADS: ForumThread[] = [
       'Clear-to-load means the current build is ready. Updating means wait — a BattlEye or client change is being rebuilt.',
     metaTitle: 'Clear-to-Load vs Updating | Destiny 2 Forum',
     metaDescription:
-      'Archived thread explaining Destiny 2 Hack anti-cheat status: clear-to-load versus Updating on destiny2hack.org.',
+      'Archived Destiny 2 Hack forum thread explaining anti-cheat status labels: clear-to-load versus Updating on destiny2hack.org.',
     category: 'Status',
     date: '2026-09-08',
     replies: 10,
@@ -212,7 +212,7 @@ export const FORUM_THREADS: ForumThread[] = [
       'Exclusions first, Destiny 2 running from the official client, then loader — never the other way around on a new PC.',
     metaTitle: 'Fresh Install Load Order | Destiny 2 Forum',
     metaDescription:
-      'Archived setup thread: correct fresh-install load order for Destiny 2 Hack on Windows 10/11.',
+      'Archived Destiny 2 Hack setup thread: correct fresh-install load order on Windows 10/11 — exclusions first, then game, then loader.',
     category: 'Setup',
     date: '2026-07-18',
     replies: 12,
@@ -234,7 +234,7 @@ export const FORUM_THREADS: ForumThread[] = [
       'Only when the current build includes it and Support/status says hardware protection is required — not every casual load.',
     metaTitle: 'Destiny 2 Spoofer Required? | Forum Archive',
     metaDescription:
-      'Archived forum answer: when Destiny 2 Hack spoofer is required versus optional on destiny2hack.org.',
+      'Archived Destiny 2 Hack forum answer: when the spoofer is required for the current build versus optional on destiny2hack.org.',
     category: 'Support',
     date: '2026-08-22',
     replies: 4,

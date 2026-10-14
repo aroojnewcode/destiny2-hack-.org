@@ -5,6 +5,8 @@ type VideoBgProps = {
   /** Poster and fallback still. Shown immediately, and to crawlers. */
   image?: string
   imageAlt?: string
+  /** Extra classes for the still (e.g. object-position for banner crops). */
+  imageClassName?: string
   /** Short muted loop. Omit on pages that should stay a still image. */
   video?: string
 }
@@ -13,6 +15,7 @@ type VideoBgProps = {
 export function VideoBg({
   image = DESTINY_HERO_VIDEO.poster,
   imageAlt = 'Destiny 2 guardian gameplay preview on the homepage background',
+  imageClassName,
   video,
 }: VideoBgProps) {
   const [loadVideo, setLoadVideo] = useState(false)
@@ -43,11 +46,11 @@ export function VideoBg({
         height={540}
         decoding="async"
         fetchPriority="high"
-        className="hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover object-center"
+        className={`hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover object-center ${imageClassName ?? ''}`}
       />
       {video && loadVideo ? (
         <video
-          className="hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover object-center"
+          className={`hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover object-center ${imageClassName ?? ''}`}
           autoPlay
           muted
           loop

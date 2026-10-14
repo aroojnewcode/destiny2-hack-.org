@@ -3,6 +3,9 @@ export type BlogSection = {
   body: string[]
 }
 
+/** Filter chips on /blogs — matches the article grid UI. */
+export type BlogTopic = 'Features' | 'Guides' | 'Setup' | 'Updates'
+
 export type BlogPost = {
   slug: string
   title: string
@@ -15,6 +18,8 @@ export type BlogPost = {
   tag: string
   /** Extra labels for the blogs index (e.g. Buyer Guides). */
   categories?: string[]
+  /** Card cover on /blogs — unique per article; swap when new art is provided. */
+  coverImage?: string
   sections: BlogSection[]
   /** Emit HowTo JSON-LD when true (setup / how-to guides). */
   howTo?: boolean
@@ -24,6 +29,56 @@ export type BlogPost = {
 export function formatBlogDate(iso: string) {
   const d = new Date(`${iso}T12:00:00Z`)
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+}
+
+/** Card badge date like “Sep 28, 2026”. */
+export function formatBlogCardDate(iso: string) {
+  const d = new Date(`${iso}T12:00:00Z`)
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+}
+
+export function blogTopic(post: BlogPost): BlogTopic {
+  switch (post.tag) {
+    case 'Features':
+    case 'Aimbot':
+    case 'ESP':
+    case 'Radar':
+    case 'Hotkeys':
+      return 'Features'
+    case 'Setup':
+    case 'Setup and Requirements':
+    case 'Antivirus':
+      return 'Setup'
+    case 'Status':
+      return 'Updates'
+    default:
+      return 'Guides'
+  }
+}
+
+/**
+ * Unique cover per slug (no repeats). Swap paths when custom art is provided —
+ * drop files under /public/media/blogs/ and point entries here.
+ */
+const BLOG_COVERS: Record<string, string> = {
+  'cheat-price': '/media/destiny-product-cover.webp',
+  'features-list': '/media/destiny-wallhack-players.webp',
+  'aimbot-settings': '/media/destiny-esp-aimbot.webp',
+  'esp-wallhack-guide': '/media/destiny-esp-street.webp',
+  'radar-hack-guide': '/media/destiny-radar-esp.webp',
+  hotkeys: '/media/destiny-radar-skeleton.webp',
+  'complete-setup': '/media/destiny-hero-poster.webp',
+  'windows-setup': '/media/destiny-product-poster.webp',
+  'disable-antivirus': '/og/blogs-disable-antivirus.jpg',
+  'stream-proof-setup': '/og/blogs-stream-proof-setup.jpg',
+  'anti-cheat-status': '/og/blogs-anti-cheat-status.jpg',
+  'undetected-status': '/og/blogs-undetected-status.jpg',
+  'match-play-guide': '/og/blogs-match-play-guide.jpg',
+  'loader-errors': '/og/blogs-loader-errors.jpg',
+}
+
+export function blogCoverImage(post: BlogPost) {
+  return post.coverImage || BLOG_COVERS[post.slug] || `/og/blogs-${post.slug}.jpg`
 }
 
 /**
@@ -130,7 +185,7 @@ export const BLOGS: BlogPost[] = [
       'Tune Destiny 2 Aimbot FOV, smoothing, hitbox and silent aim so player tracking stays effective without looking robotic to spectating admins.',
     metaTitle: 'Destiny 2 Aimbot Settings | Silent Aim FOV & Smoothing',
     metaDescription:
-      'Destiny 2 Aimbot settings for PC: silent aim, FOV, smoothing and visible-check so your Destiny 2 hack looks legit in Control and Survival. Start conservative, then save configs.',
+      'Destiny 2 Aimbot settings: silent aim, FOV, smoothing and visible-check for Control and Survival. Start conservative, then save configs on destiny2hack.org.',
     searchTerms: 'destiny 2 aimbot settings silent aim fov smoothing destiny 2 cheat destiny 2 hack',
     date: '2026-09-17',
     readMinutes: 10,
@@ -218,9 +273,9 @@ export const BLOGS: BlogPost[] = [
     title: 'Destiny 2 Radar Hack Overlay Guide',
     excerpt:
       'Use the Destiny 2 radar hack 2D overlay to track off-screen players, avoid flanks and approach the objective safer.',
-    metaTitle: 'Destiny 2 Radar Hack Guide | 2D Overlay for Off-Screen Players',
+    metaTitle: 'Destiny 2 Radar Hack | Off-Screen Overlay Guide',
     metaDescription:
-      'Destiny 2 radar hack guide for PC: 2D radar overlay, off-screen enemy tracking and safer objective approaches. Pair with ESP so your Destiny 2 hack stays readable.',
+      'Destiny 2 radar hack guide: 2D overlay, off-screen tracking and safer objective approaches. Pair with ESP on destiny2hack.org.',
     searchTerms: 'destiny 2 radar hack destiny 2 hack 2d radar overlay off screen destiny 2 cheat',
     date: '2026-09-17',
     readMinutes: 8,
@@ -256,7 +311,7 @@ export const BLOGS: BlogPost[] = [
       'Menu and toggle hotkeys for Destiny 2 hack after a clean load — Aimbot, ESP, Super and ability ESP, radar and panic binds.',
     metaTitle: 'Destiny 2 Hack Hotkeys | Menu ESP Aimbot Toggles',
     metaDescription:
-      'Destiny 2 hack hotkeys after checkout: open menu, Aimbot toggle, player ESP, Super and ability ESP, radar hack and stream-proof binds. Keep panic keys minimal for field use.',
+      'Destiny 2 Hack hotkeys after load: menu, Aimbot, player ESP, radar and stream-proof binds. Keep panic keys minimal on destiny2hack.org.',
     searchTerms: 'destiny 2 hack hotkeys menu esp aimbot radar toggles destiny 2 cheat',
     date: '2026-09-17',
     readMinutes: 8,
@@ -287,12 +342,12 @@ export const BLOGS: BlogPost[] = [
   },
   {
     slug: 'complete-setup',
-    title: 'Complete Destiny 2 Hack Setup',
+    title: 'Complete Destiny 2 Hack Setup Guide',
     excerpt:
       'Step-by-step Destiny 2 hack setup: buy from $35, antivirus exclusions, load order, enable ESP and Aimbot, save configs, re-check anti-cheat status.',
     metaTitle: 'Destiny 2 Hack Setup Guide | Complete Loader Steps',
     metaDescription:
-      'Complete Destiny 2 hack setup for Windows PC: buy when status is clear, antivirus exclusions, load order, first-run ESP and Aimbot config, then re-check anti-cheat after every patch.',
+      'Complete Destiny 2 Hack setup: buy when clear-to-load, Defender exclusions, load order, first ESP/Aimbot config, then re-check status after every patch.',
     searchTerms: 'destiny 2 hack setup load order windows complete guide destiny 2 cheat',
     date: '2026-09-17',
     readMinutes: 11,
@@ -331,12 +386,12 @@ export const BLOGS: BlogPost[] = [
   },
   {
     slug: 'windows-setup',
-    title: 'Destiny 2 Cheat Requirements: Windows, Defender and Load Path',
+    title: 'Destiny 2 Hack Requirements: Windows, Defender, Load Path',
     excerpt:
       'What your PC needs before Destiny 2 Hack: Windows 10/11, Defender exclusions, overlays off, admin load and a clean first launch with clear anti-cheat status.',
-    metaTitle: 'Destiny 2 Cheat Requirements | Windows 10/11 Setup',
+    metaTitle: 'Destiny 2 Hack Requirements | Windows 10/11 Setup',
     metaDescription:
-      'Destiny 2 cheat requirements for Windows 10/11 — Defender exclusions, overlay cleanup, admin load and a clean first launch when status is clear on destiny2hack.org.',
+      'Destiny 2 Hack requirements for Windows 10/11 — Defender exclusions, overlay cleanup, admin load and a clean first launch when status is clear.',
     searchTerms: 'destiny 2 hack windows 11 setup defender overlay admin destiny 2 cheat requirements',
     date: '2026-02-07',
     readMinutes: 8,
@@ -372,7 +427,7 @@ export const BLOGS: BlogPost[] = [
       'Allowlist Destiny 2 hack in Windows Defender and common antivirus so the loader is not quarantined before first run.',
     metaTitle: 'Destiny 2 Hack Antivirus Exclusions | Defender',
     metaDescription:
-      'Allowlist Destiny 2 hack loaders in Windows Defender and third-party antivirus before you load. Restore quarantines, exclude the delivery folder, then continue setup when status is clear.',
+      'Allowlist Destiny 2 Hack in Windows Defender before load. Restore quarantines, exclude the delivery folder, then continue setup when status is clear.',
     searchTerms: 'destiny 2 hack antivirus defender exclusion quarantine loader destiny 2 cheat',
     date: '2026-09-17',
     readMinutes: 8,
@@ -407,7 +462,7 @@ export const BLOGS: BlogPost[] = [
       'Hide Destiny 2 ESP, utility highlighting and Aimbot overlays from OBS and capture tools with stream-proof mode.',
     metaTitle: 'Stream-Proof Destiny 2 Hack | OBS Safe Overlay',
     metaDescription:
-      'Stream-proof Destiny 2 hack for OBS and clips: keep ESP, wallhack and Aimbot overlays off recordings while you still see them locally. Test with a private capture first.',
+      'Stream-proof Destiny 2 Hack for OBS: keep ESP, wallhack and Aimbot off recordings while you see them locally. Test with a private capture first.',
     searchTerms: 'destiny 2 stream proof cheats esp obs hide overlay clips destiny 2 cheat',
     date: '2026-09-17',
     readMinutes: 8,
@@ -437,12 +492,12 @@ export const BLOGS: BlogPost[] = [
   },
     {
     slug: 'anti-cheat-status',
-    title: 'Destiny 2 anti-cheat Status: Clear to Load vs Updating',
+    title: 'Destiny 2 Anti-Cheat Status: Clear to Load vs Updating',
     excerpt:
-      'What clear-to-load and Updating mean for Destiny 2 hack after anti-cheat and game patches — and why admin bans are a separate risk.',
-    metaTitle: 'Destiny 2 anti-cheat Status | Clear to Load vs Updating',
+      'Definitions only — what clear-to-load and Updating mean after BattlEye / Destiny 2 patches, and why admin bans are a separate risk.',
+    metaTitle: 'Destiny 2 Anti-Cheat Status | Clear to Load vs Updating',
     metaDescription:
-      'Destiny 2 anti-cheat status explained for Destiny 2 hack: clear-to-load vs Updating after patches, why you wait, and how admin bans differ from anti-cheat detections.',
+      'What clear-to-load vs Updating means for Destiny 2 Hack after BattlEye patches — and why admin bans differ from anti-cheat detections.',
     searchTerms: 'destiny 2 anti-cheat status clear to load updating destiny 2 hack explained',
     date: '2026-09-17',
     readMinutes: 8,
@@ -471,19 +526,19 @@ export const BLOGS: BlogPost[] = [
       {
         heading: 'After every patch',
         body: [
-          'Re-read status after every Destiny 2 or anti-cheat patch before you join a server. Use the status checklist guide for the pre-buy / pre-load habit.',
+          'Re-read status after every Destiny 2 or anti-cheat patch before you join a server. For the step-by-step pre-buy and pre-load habit, use the status checklist guide — this page only defines the labels.',
         ],
       },
     ],
   },
   {
     slug: 'undetected-status',
-    title: 'Anti-cheat Status Checklist Before You Buy or Load',
+    title: 'Status Checklist Before You Buy or Load Destiny 2 Hack',
     excerpt:
-      'Short anti-cheat status checklist for Destiny 2 hack — confirm clear-to-load before checkout and before every post-patch session.',
-    metaTitle: 'Anti-cheat Status Checklist | Before You Buy Destiny 2 Hack',
+      'Action checklist — confirm clear-to-load before checkout and before every post-patch session. Pair with the status definitions guide.',
+    metaTitle: 'Status Checklist Before Buy/Load | Destiny 2 Hack',
     metaDescription:
-      'anti-cheat status checklist for Destiny 2 hack: confirm clear-to-load before checkout and before every post-patch session. Wait when Updating; buy from $35 when status is live.',
+      'Pre-buy and pre-load checklist for Destiny 2 Hack: confirm clear-to-load, wait when Updating, then checkout from $35 when status is live.',
     searchTerms: 'destiny 2 hack status checklist before buy load anti-cheat undetected destiny 2 hack',
     date: '2026-09-17',
     readMinutes: 8,
@@ -492,13 +547,13 @@ export const BLOGS: BlogPost[] = [
       {
         heading: 'Before checkout',
         body: [
-          'Confirm clear-to-load status on the homepage or product page. If Updating, wait or read Refunds for extended downtime. Prices start from $35 when status is live.',
+          'Confirm clear-to-load on the homepage or product page. If Updating, wait or read Refunds for extended downtime. Prices start from $35 when status is live. Need label definitions? Read the clear-to-load vs Updating guide first.',
         ],
       },
       {
         heading: 'Before every session',
         body: [
-          'Re-check anti-cheat status after Destiny 2 patches. Load once cleanly — do not spam inject into a failed state before you join a server.',
+          'Re-check status after Destiny 2 patches. Load once cleanly — do not spam inject into a failed state before you join a server.',
         ],
       },
       {
@@ -509,14 +564,14 @@ export const BLOGS: BlogPost[] = [
       },
     ],
   },
-{
+  {
     slug: 'match-play-guide',
     title: 'Safer Destiny 2 hack Settings for Match Plays',
     excerpt:
       'Safer Destiny 2 hack defaults for competitive matchmaking — ESP-first play, mild silent aim, radar awareness and report-conscious habits.',
-    metaTitle: 'Safer Destiny 2 hack Settings | Match Play Defaults',
+    metaTitle: 'Safer Destiny 2 Hack Settings | Match Play Defaults',
     metaDescription:
-      'Safer Destiny 2 hack settings for Survival and Control: ESP-first play, mild silent aim, Super awareness, radar hack and anti-cheat habits that reduce report risk.',
+      'Safer Destiny 2 Hack settings for Survival and Control: ESP-first, mild silent aim, radar habits that reduce report risk on destiny2hack.org.',
     searchTerms: 'destiny 2 cheat settings match play competitive safer defaults esp aimbot destiny 2 hack',
     date: '2026-09-17',
     readMinutes: 9,
@@ -552,7 +607,7 @@ export const BLOGS: BlogPost[] = [
       'Troubleshoot Destiny 2 hack loader errors — menu not opening, instant close, antivirus quarantine and failed inject.',
     metaTitle: 'Fix Destiny 2 Hack Loader Errors | Inject & Menu',
     metaDescription:
-      'Fix Destiny 2 hack loader errors on Windows: antivirus quarantine, overlays, failed inject and menu not opening. Confirm anti-cheat status is clear first, then escalate with your order ID.',
+      'Fix Destiny 2 Hack loader errors: Defender quarantine, overlays, failed inject, menu not opening. Confirm clear status, then open Support with your order ID.',
     searchTerms: 'destiny 2 hack loader error inject failed menu not opening fix',
     date: '2026-09-17',
     readMinutes: 8,

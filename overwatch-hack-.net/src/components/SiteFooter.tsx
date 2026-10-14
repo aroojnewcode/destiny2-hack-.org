@@ -39,7 +39,7 @@ export function SiteFooter({ currentPath }: SiteFooterProps) {
               <LogoMark className="text-z-soft" />
               <span className="font-semibold text-z-ink">{SITE_NAME}</span>
             </div>
-            <p className="mt-3 text-sm leading-relaxed text-white/55">
+            <p className="mt-3 text-sm leading-relaxed text-white/65">
               Destiny 2 hack for PC — silent aim Aimbot, player ESP, wallhack, radar and live anti-cheat status
               for Destiny 2 players worldwide.
             </p>

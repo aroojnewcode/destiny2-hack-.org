@@ -3,16 +3,16 @@ import { VideoBg } from '../components/VideoBg'
 import { CheckoutLink } from '../components/CheckoutLink'
 import { guidePath } from '../data/games'
 import { HOME_HEADINGS, SITE_HOST } from '../data/site'
-import { DESTINY_HERO_VIDEO } from '../data/media'
+import { DESTINY_HERO_BANNER } from '../data/media'
 
 /** Above-the-fold home hero — hydrated early for nav + checkout. */
 export function HomeHero() {
   return (
     <section id="home" className="relative flex min-h-screen flex-col overflow-x-clip">
       <VideoBg
-        image={DESTINY_HERO_VIDEO.poster}
-        imageAlt="Destiny 2 first-person gameplay highlight on the homepage hero"
-        video={DESTINY_HERO_VIDEO.src}
+        image={DESTINY_HERO_BANNER}
+        imageAlt="Destiny 2 Guardians standing before the broken Traveler on the homepage hero"
+        imageClassName="object-[72%_center] sm:object-[68%_center]"
       />
 
       <div className="relative z-20 flex min-h-screen flex-col">

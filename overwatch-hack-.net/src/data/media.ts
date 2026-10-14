@@ -15,6 +15,8 @@ export const DESTINY_SHOT_RADAR = '/media/destiny-radar-esp.webp'
 export const DESTINY_SHOT_ESP_AIMBOT = '/media/destiny-esp-aimbot.webp'
 export const DESTINY_PRODUCT_COVER = '/media/destiny-product-cover.webp'
 export const DESTINY_HERO_POSTER = '/media/destiny-hero-poster.webp'
+/** Full-bleed Guardians cinematic banner for the homepage hero (WebP). */
+export const DESTINY_HERO_BANNER = '/media/destiny-hero-banner.webp'
 export const DESTINY_PRODUCT_POSTER = '/media/destiny-product-poster.webp'
 
 export const DESTINY_HERO = DESTINY_SHOT_WALLHACK
@@ -40,7 +42,7 @@ export const DESTINY_HOME_VIDEO = {
 
 export const DESTINY_HERO_VIDEO = {
   src: '/videos/destiny-hero-loop.mp4',
-  poster: DESTINY_HERO_POSTER,
+  poster: DESTINY_HERO_BANNER,
 } as const
 
 const SHOT_WALLHACK: SeoMediaItem = {

@@ -7,7 +7,7 @@ import { PRODUCT_PATH, SITE_NAME } from '../data/site'
 /** Primary site pages — Home is its own route at /. */
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
-  { label: 'Destiny2 Cheats', to: PRODUCT_PATH },
+  { label: 'Product', to: PRODUCT_PATH },
   { label: 'Blogs', to: '/blogs' },
   { label: 'Forum', to: '/forums' },
   { label: 'Reviews', to: '/reviews' },

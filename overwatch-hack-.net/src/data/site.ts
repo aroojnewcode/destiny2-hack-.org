@@ -122,9 +122,9 @@ export const SEO = {
     robots: INDEX_ROBOTS,
   },
   product: {
-    title: 'Destiny 2 Hack — Price & Checkout | Aimbot, ESP, Radar',
+    title: 'Destiny 2 Hack — Aimbot, ESP & Radar | Price from $35',
     description:
-      'Destiny 2 Hack price and checkout — silent aim Aimbot, player ESP, wallhack, radar and live anti-cheat status from $35. Destiny 2 cheats for PC on destiny2hack.org.',
+      'Destiny 2 Hack for PC from $35 — silent aim Aimbot, player ESP, wallhack, radar and live BattlEye status before checkout on destiny2hack.org.',
     path: PRODUCT_PATH,
     ogType: 'product',
     image: PAGE_OG.product,
@@ -134,7 +134,7 @@ export const SEO = {
 } as const satisfies Record<string, PageSeo>
 
 export const HOME_HEADINGS = {
-  h1: 'Destiny 2 Hack for PC — Aimbot, ESP & Wallhack',
+  h1: 'Destiny 2 Hack — Aimbot, ESP & Wallhack for PC',
   h2Features: 'Aimbot, ESP, wallhack & radar',
   h2Featured: 'ESP and silent aim Aimbot',
   h2About: 'Check anti-cheat status before you buy Destiny 2 Hack',

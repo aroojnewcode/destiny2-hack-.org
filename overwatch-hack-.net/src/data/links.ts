@@ -24,7 +24,7 @@ export const OFFICIAL_DESTINY_LINKS = [
 export const SITE_PAGE_LINKS = [
   { label: 'Home', to: '/', description: 'Live status, price and checkout' },
   {
-    label: 'Destiny2 Cheats',
+    label: 'Product',
     to: PRODUCT_PATH,
     description: 'Destiny 2 Hack — Aimbot, ESP, wallhack, radar and checkout',
   },

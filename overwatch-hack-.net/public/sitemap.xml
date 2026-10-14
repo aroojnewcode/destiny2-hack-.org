@@ -5,7 +5,7 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://destiny2hack.org/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://destiny2hack.org/" />
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://destiny2hack.org/destiny-2-hack</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://destiny2hack.org/destiny-2-hack" />
@@ -84,7 +84,7 @@
   </url>
   <url>
     <loc>https://destiny2hack.org/blogs</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://destiny2hack.org/blogs" />
@@ -110,7 +110,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/blogs-aimbot-settings.jpg</image:loc>
       <image:title>Destiny 2 Aimbot Settings for Silent Aim Open Graph</image:title>
-      <image:caption>Destiny 2 Aimbot settings for PC: silent aim, FOV, smoothing and visible-check so your Destiny 2 hack looks legit in Control and Survival. Start conservative, then save configs.</image:caption>
+      <image:caption>Destiny 2 Aimbot settings: silent aim, FOV, smoothing and visible-check for Control and Survival. Start conservative, then save configs on destiny2hack.org.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -127,13 +127,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://destiny2hack.org/blogs/anti-cheat-status" />
     <image:image>
       <image:loc>https://destiny2hack.org/og/blogs-anti-cheat-status.jpg</image:loc>
-      <image:title>Destiny 2 anti-cheat Status: Clear to Load vs Updating Open Graph</image:title>
-      <image:caption>Destiny 2 anti-cheat status explained for Destiny 2 hack: clear-to-load vs Updating after patches, why you wait, and how admin bans differ from anti-cheat detections.</image:caption>
+      <image:title>Destiny 2 Anti-Cheat Status: Clear to Load vs Updating Open Graph</image:title>
+      <image:caption>What clear-to-load vs Updating means for Destiny 2 Hack after BattlEye patches - and why admin bans differ from anti-cheat detections.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-radar-esp.webp</image:loc>
-      <image:title>Destiny 2 anti-cheat Status: Clear to Load vs Updating Artwork</image:title>
-      <image:caption>What clear-to-load and Updating mean for Destiny 2 hack after anti-cheat and game patches - and why admin bans are a separate risk.</image:caption>
+      <image:title>Destiny 2 Anti-Cheat Status: Clear to Load vs Updating Artwork</image:title>
+      <image:caption>Definitions only - what clear-to-load and Updating mean after BattlEye / Destiny 2 patches, and why admin bans are a separate risk.</image:caption>
     </image:image>
   </url>
   <url>
@@ -163,12 +163,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://destiny2hack.org/blogs/complete-setup" />
     <image:image>
       <image:loc>https://destiny2hack.org/og/blogs-complete-setup.jpg</image:loc>
-      <image:title>Complete Destiny 2 Hack Setup Open Graph</image:title>
-      <image:caption>Complete Destiny 2 hack setup for Windows PC: buy when status is clear, antivirus exclusions, load order, first-run ESP and Aimbot config, then re-check anti-cheat after every patch.</image:caption>
+      <image:title>Complete Destiny 2 Hack Setup Guide Open Graph</image:title>
+      <image:caption>Complete Destiny 2 Hack setup: buy when clear-to-load, Defender exclusions, load order, first ESP/Aimbot config, then re-check status after every patch.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-wallhack-players.webp</image:loc>
-      <image:title>Complete Destiny 2 Hack Setup Artwork</image:title>
+      <image:title>Complete Destiny 2 Hack Setup Guide Artwork</image:title>
       <image:caption>Step-by-step Destiny 2 hack setup: buy from $35, antivirus exclusions, load order, enable ESP and Aimbot, save configs, re-check anti-cheat status.</image:caption>
     </image:image>
   </url>
@@ -182,7 +182,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/blogs-disable-antivirus.jpg</image:loc>
       <image:title>Antivirus Exclusions for Destiny 2 Hack Open Graph</image:title>
-      <image:caption>Allowlist Destiny 2 hack loaders in Windows Defender and third-party antivirus before you load. Restore quarantines, exclude the delivery folder, then continue setup when status is clear.</image:caption>
+      <image:caption>Allowlist Destiny 2 Hack in Windows Defender before load. Restore quarantines, exclude the delivery folder, then continue setup when status is clear.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -236,7 +236,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/blogs-hotkeys.jpg</image:loc>
       <image:title>Destiny 2 Hack Hotkeys After Load Open Graph</image:title>
-      <image:caption>Destiny 2 hack hotkeys after checkout: open menu, Aimbot toggle, player ESP, Super and ability ESP, radar hack and stream-proof binds. Keep panic keys minimal for field use.</image:caption>
+      <image:caption>Destiny 2 Hack hotkeys after load: menu, Aimbot, player ESP, radar and stream-proof binds. Keep panic keys minimal on destiny2hack.org.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -254,7 +254,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/blogs-loader-errors.jpg</image:loc>
       <image:title>Fix Destiny 2 Hack Loader Errors Open Graph</image:title>
-      <image:caption>Fix Destiny 2 hack loader errors on Windows: antivirus quarantine, overlays, failed inject and menu not opening. Confirm anti-cheat status is clear first, then escalate with your order ID.</image:caption>
+      <image:caption>Fix Destiny 2 Hack loader errors: Defender quarantine, overlays, failed inject, menu not opening. Confirm clear status, then open Support with your order ID.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-radar-esp.webp</image:loc>
@@ -272,7 +272,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/blogs-match-play-guide.jpg</image:loc>
       <image:title>Safer Destiny 2 hack Settings for Match Plays Open Graph</image:title>
-      <image:caption>Safer Destiny 2 hack settings for Survival and Control: ESP-first play, mild silent aim, Super awareness, radar hack and anti-cheat habits that reduce report risk.</image:caption>
+      <image:caption>Safer Destiny 2 Hack settings for Survival and Control: ESP-first, mild silent aim, radar habits that reduce report risk on destiny2hack.org.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-aimbot.webp</image:loc>
@@ -290,7 +290,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/blogs-radar-hack-guide.jpg</image:loc>
       <image:title>Destiny 2 Radar Hack Overlay Guide Open Graph</image:title>
-      <image:caption>Destiny 2 radar hack guide for PC: 2D radar overlay, off-screen enemy tracking and safer objective approaches. Pair with ESP so your Destiny 2 hack stays readable.</image:caption>
+      <image:caption>Destiny 2 radar hack guide: 2D overlay, off-screen tracking and safer objective approaches. Pair with ESP on destiny2hack.org.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -308,7 +308,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/blogs-stream-proof-setup.jpg</image:loc>
       <image:title>Stream-Proof Destiny 2 Hack for OBS Open Graph</image:title>
-      <image:caption>Stream-proof Destiny 2 hack for OBS and clips: keep ESP, wallhack and Aimbot overlays off recordings while you still see them locally. Test with a private capture first.</image:caption>
+      <image:caption>Stream-proof Destiny 2 Hack for OBS: keep ESP, wallhack and Aimbot off recordings while you see them locally. Test with a private capture first.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-wallhack-players.webp</image:loc>
@@ -325,13 +325,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://destiny2hack.org/blogs/undetected-status" />
     <image:image>
       <image:loc>https://destiny2hack.org/og/blogs-undetected-status.jpg</image:loc>
-      <image:title>Anti-cheat Status Checklist Before You Buy or Load Open Graph</image:title>
-      <image:caption>anti-cheat status checklist for Destiny 2 hack: confirm clear-to-load before checkout and before every post-patch session. Wait when Updating; buy from $35 when status is live.</image:caption>
+      <image:title>Status Checklist Before You Buy or Load Destiny 2 Hack Open Graph</image:title>
+      <image:caption>Pre-buy and pre-load checklist for Destiny 2 Hack: confirm clear-to-load, wait when Updating, then checkout from $35 when status is live.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-radar-esp.webp</image:loc>
-      <image:title>Anti-cheat Status Checklist Before You Buy or Load Artwork</image:title>
-      <image:caption>Short anti-cheat status checklist for Destiny 2 hack - confirm clear-to-load before checkout and before every post-patch session.</image:caption>
+      <image:title>Status Checklist Before You Buy or Load Destiny 2 Hack Artwork</image:title>
+      <image:caption>Action checklist - confirm clear-to-load before checkout and before every post-patch session. Pair with the status definitions guide.</image:caption>
     </image:image>
   </url>
   <url>
@@ -343,18 +343,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://destiny2hack.org/blogs/windows-setup" />
     <image:image>
       <image:loc>https://destiny2hack.org/og/blogs-windows-setup.jpg</image:loc>
-      <image:title>Destiny 2 Cheat Requirements: Windows, Defender and Load Path Open Graph</image:title>
-      <image:caption>Destiny 2 cheat requirements for Windows 10/11 - Defender exclusions, overlay cleanup, admin load and a clean first launch when status is clear on destiny2hack.org.</image:caption>
+      <image:title>Destiny 2 Hack Requirements: Windows, Defender, Load Path Open Graph</image:title>
+      <image:caption>Destiny 2 Hack requirements for Windows 10/11 - Defender exclusions, overlay cleanup, admin load and a clean first launch when status is clear.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-wallhack-players.webp</image:loc>
-      <image:title>Destiny 2 Cheat Requirements: Windows, Defender and Load Path Artwork</image:title>
+      <image:title>Destiny 2 Hack Requirements: Windows, Defender, Load Path Artwork</image:title>
       <image:caption>What your PC needs before Destiny 2 Hack: Windows 10/11, Defender exclusions, overlays off, admin load and a clean first launch with clear anti-cheat status.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://destiny2hack.org/forums</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://destiny2hack.org/forums" />
@@ -380,7 +380,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/forums-aimbot-too-obvious-trials.jpg</image:loc>
       <image:title>Aimbot feels too obvious in Trials - what settings? Open Graph</image:title>
-      <image:caption>Archived forum advice: quieter Destiny 2 silent-aim settings for Trials - FOV, smoothing and hitbox choices.</image:caption>
+      <image:caption>Archived Destiny 2 Hack forum advice: quieter silent-aim settings for Trials - tighten FOV, add smoothing and prefer chest hitboxes.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -398,7 +398,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/forums-clear-to-load-vs-updating.jpg</image:loc>
       <image:title>What does clear-to-load vs Updating mean? Open Graph</image:title>
-      <image:caption>Archived thread explaining Destiny 2 Hack anti-cheat status: clear-to-load versus Updating on destiny2hack.org.</image:caption>
+      <image:caption>Archived Destiny 2 Hack forum thread explaining anti-cheat status labels: clear-to-load versus Updating on destiny2hack.org.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -416,7 +416,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/forums-defender-quarantined-loader.jpg</image:loc>
       <image:title>Windows Defender quarantined the Destiny 2 loader Open Graph</image:title>
-      <image:caption>Archived thread: fix Windows Defender quarantining the Destiny 2 Hack loader - exclusions, restore and clean load order.</image:caption>
+      <image:caption>Archived Destiny 2 Hack forum thread: fix Windows Defender quarantining the loader - add exclusions, restore the file, then load cleanly.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -434,7 +434,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/forums-esp-not-showing-through-walls.jpg</image:loc>
       <image:title>ESP not showing through walls in Crucible? Open Graph</image:title>
-      <image:caption>Archived forum help: Destiny 2 player ESP / wallhack not visible in Crucible - filters, distance and stream-proof checks.</image:caption>
+      <image:caption>Archived Destiny 2 Hack forum help: player ESP or wallhack not visible in Crucible - check filters, distance and stream-proof before reinstalling.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -452,7 +452,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/forums-fresh-install-order.jpg</image:loc>
       <image:title>Fresh install: what order do I load Destiny 2 Hack? Open Graph</image:title>
-      <image:caption>Archived setup thread: correct fresh-install load order for Destiny 2 Hack on Windows 10/11.</image:caption>
+      <image:caption>Archived Destiny 2 Hack setup thread: correct fresh-install load order on Windows 10/11 - exclusions first, then game, then loader.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -470,7 +470,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/forums-license-expired-renew.jpg</image:loc>
       <image:title>License expired - how do I renew on destiny2hack.org? Open Graph</image:title>
-      <image:caption>Archived forum thread: renewing an expired Destiny 2 Hack license on destiny2hack.org and what to send Support.</image:caption>
+      <image:caption>Archived Destiny 2 Hack forum thread: renew an expired license on destiny2hack.org, reuse your order email, and what to send Support.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -488,7 +488,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/forums-save-settings-configs.jpg</image:loc>
       <image:title>Can you save Destiny 2 Hack settings/configs? Open Graph</image:title>
-      <image:caption>Archived forum thread: how to save and re-import Destiny 2 Hack Aimbot, ESP and hotkey configs on destiny2hack.org.</image:caption>
+      <image:caption>Archived Destiny 2 Hack forum thread: how to save and re-import Aimbot FOV, ESP colors and hotkey configs after a rebuild on destiny2hack.org.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -506,7 +506,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/forums-spoofer-required-or-not.jpg</image:loc>
       <image:title>Do I need the spoofer every session? Open Graph</image:title>
-      <image:caption>Archived forum answer: when Destiny 2 Hack spoofer is required versus optional on destiny2hack.org.</image:caption>
+      <image:caption>Archived Destiny 2 Hack forum answer: when the spoofer is required for the current build versus optional on destiny2hack.org.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -524,7 +524,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/forums-stream-proof-obs-capture.jpg</image:loc>
       <image:title>Will stream-proof hide ESP from OBS? Open Graph</image:title>
-      <image:caption>Archived thread: using Destiny 2 Hack stream-proof with OBS - what is hidden and how to verify before streaming.</image:caption>
+      <image:caption>Archived Destiny 2 Hack forum thread: using stream-proof with OBS - what overlays stay hidden and how to verify with a local recording.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -542,7 +542,7 @@
     <image:image>
       <image:loc>https://destiny2hack.org/og/forums-wait-after-game-patch.jpg</image:loc>
       <image:title>Destiny 2 update after a game patch: do I wait? Open Graph</image:title>
-      <image:caption>Archived thread: when to wait after a Destiny 2 / BattlEye patch before loading Destiny 2 Hack on destiny2hack.org.</image:caption>
+      <image:caption>Archived Destiny 2 Hack forum thread: when to wait after a Destiny 2 or BattlEye patch before loading - wait for clear-to-load on destiny2hack.org.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://destiny2hack.org/media/destiny-esp-street.webp</image:loc>
@@ -552,7 +552,7 @@
   </url>
   <url>
     <loc>https://destiny2hack.org/faq</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://destiny2hack.org/faq" />
@@ -565,7 +565,7 @@
   </url>
   <url>
     <loc>https://destiny2hack.org/reviews</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://destiny2hack.org/reviews" />
@@ -578,7 +578,7 @@
   </url>
   <url>
     <loc>https://destiny2hack.org/support</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://destiny2hack.org/support" />
@@ -591,7 +591,7 @@
   </url>
   <url>
     <loc>https://destiny2hack.org/privacy</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://destiny2hack.org/privacy" />
@@ -604,7 +604,7 @@
   </url>
   <url>
     <loc>https://destiny2hack.org/refunds</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.45</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://destiny2hack.org/refunds" />
@@ -617,7 +617,7 @@
   </url>
   <url>
     <loc>https://destiny2hack.org/terms</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://destiny2hack.org/terms" />
