@@ -11,17 +11,23 @@ import { DESTINY_HERO_BANNER } from '../data/media'
     <div class="absolute inset-0 z-0 bg-z-bg" aria-hidden="true"></div>
     <img
       src={DESTINY_HERO_BANNER}
-      alt="Destiny 2 Guardians standing before the broken Traveler on the homepage hero"
-      width="1920"
-      height="800"
+      alt="Destiny 2 Guardians key art — Titan, Hunter and Warlock under the Tricorn on the homepage hero"
+      width="2560"
+      height="1440"
       decoding="async"
       fetchpriority="high"
-      class="hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover object-[72%_center] sm:object-[68%_center]"
+      class="hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover object-center"
     />
     <div class="hero-video-tint pointer-events-none absolute inset-0 z-[2]" aria-hidden="true"></div>
     <div class="hero-video-tint-glow pointer-events-none absolute inset-0 z-[2]" aria-hidden="true"></div>
+    <!-- Extra bottom-left scrim so headline / CTA stay readable -->
     <div
-      class="absolute inset-x-0 bottom-0 z-[3] h-40 bg-gradient-to-t from-z-bg via-z-bg/80 to-transparent"
+      class="pointer-events-none absolute inset-0 z-[3] bg-[radial-gradient(ellipse_85%_70%_at_0%_100%,rgba(6,4,15,0.92)_0%,rgba(6,4,15,0.55)_35%,transparent_62%)]"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute inset-x-0 bottom-0 z-[3] h-52 bg-gradient-to-t from-z-bg via-z-bg/85 to-transparent"
       aria-hidden="true"
     >
     </div>
@@ -50,7 +56,7 @@ import { DESTINY_HERO_BANNER } from '../data/media'
           >
             {HOME_HEADINGS.h1}
           </h1>
-          <p class="mt-3 max-w-md text-sm leading-relaxed text-white/75 sm:mt-3.5 sm:text-[0.95rem]">
+          <p class="mt-3 max-w-md text-sm leading-relaxed text-white/90 sm:mt-3.5 sm:text-[0.95rem]">
             Destiny 2 cheats for Windows 10 and 11 — silent aim Aimbot, player ESP, wallhack, radar
             and a clear cheat menu. Live anti-cheat status on Control, Survival and Trials of Osiris.
           </p>

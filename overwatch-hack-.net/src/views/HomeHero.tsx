@@ -11,8 +11,8 @@ export function HomeHero() {
     <section id="home" className="relative flex min-h-screen flex-col overflow-x-clip">
       <VideoBg
         image={DESTINY_HERO_BANNER}
-        imageAlt="Destiny 2 Guardians standing before the broken Traveler on the homepage hero"
-        imageClassName="object-[72%_center] sm:object-[68%_center]"
+        imageAlt="Destiny 2 Guardians key art — Titan, Hunter and Warlock under the Tricorn on the homepage hero"
+        imageClassName="object-center"
       />
 
       <div className="relative z-20 flex min-h-screen flex-col">
