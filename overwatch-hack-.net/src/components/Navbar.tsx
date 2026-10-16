@@ -72,7 +72,7 @@ export function Navbar({ onVideo: _onVideo = false }: NavbarProps) {
             })}
           </div>
           <CheckoutLink className="cta-gradient flex items-center self-stretch rounded-full px-5 text-sm font-semibold text-white transition-opacity hover:opacity-90">
-            Get
+            Buy
           </CheckoutLink>
         </div>
 
@@ -134,7 +134,7 @@ export function Navbar({ onVideo: _onVideo = false }: NavbarProps) {
             onClick={() => setMenuOpen(false)}
             className="cta-gradient block w-full rounded-full px-6 py-3 text-center text-sm font-semibold text-white"
           >
-            Get
+            Buy
           </CheckoutLink>
         </div>
       </div>

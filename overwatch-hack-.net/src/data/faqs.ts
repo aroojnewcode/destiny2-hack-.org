@@ -57,10 +57,6 @@ export const SITE_FAQS: FaqItem[] = [
     q: 'What is your refund policy?',
     a: 'Digital licenses follow the Refunds page — delivery failures and extended Updating windows can qualify; change of mind after a working key does not.',
   },
-  {
-    q: 'Is this the official Destiny 2 site?',
-    a: 'No. We sell a Destiny 2 hack only. Buy and play the game on Steam. We are not affiliated with Bungie or Destiny 2.',
-  },
 ]
 
 /** Commercial questions shown on the homepage; FAQ schema lives on /faq only. */

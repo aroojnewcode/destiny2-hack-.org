@@ -413,4 +413,4 @@ if (failures.length) {
   throw new Error(`SEO verification failed:\n- ${failures.join('\n- ')}`)
 }
 
-console.log(`SEO verification passed: ${files.length} HTML files, 14 blogs, 10 forum threads, 12 reviews`)
+console.log(`SEO verification passed: ${files.length} HTML files, 14 blogs, 20 forum threads, 12 reviews`)

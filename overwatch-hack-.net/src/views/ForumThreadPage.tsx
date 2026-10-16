@@ -57,11 +57,41 @@ export function ForumThreadPage({ slug }: ForumThreadPageProps) {
               · last reply {formatForumDate(thread.lastReplyDate)} by {thread.lastReplyAuthor}
             </p>
 
-            <div className="mt-10 space-y-4 text-sm leading-relaxed text-white/60 sm:text-base">
-              {thread.body.map((para) => (
-                <p key={para.slice(0, 40)}>{para}</p>
-              ))}
-            </div>
+            <section
+              className="mt-10 rounded-2xl border border-white/10 bg-white/[0.02] p-5 sm:p-6"
+              aria-label="Original post"
+            >
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <p className="text-sm font-semibold text-white">{thread.author}</p>
+                <p className="text-xs text-white/40">{formatForumDate(thread.date)}</p>
+              </div>
+              <div className="mt-4 space-y-3 text-sm leading-relaxed text-white/65 sm:text-base">
+                {thread.body.map((para) => (
+                  <p key={para.slice(0, 40)}>{para}</p>
+                ))}
+              </div>
+            </section>
+
+            <section className="mt-10" aria-labelledby="forum-replies-heading">
+              <h2
+                id="forum-replies-heading"
+                className="text-lg font-semibold tracking-tight text-white"
+              >
+                {formatForumNumber(thread.comments.length)}{' '}
+                {thread.comments.length === 1 ? 'reply' : 'replies'}
+              </h2>
+              <ul className="mt-4 divide-y divide-white/10 rounded-2xl border border-white/10">
+                {thread.comments.map((reply, index) => (
+                  <li key={`${reply.author}-${reply.date}-${index}`} className="p-5 sm:p-6">
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <p className="text-sm font-semibold text-white">{reply.author}</p>
+                      <p className="text-xs text-white/40">{formatForumDate(reply.date)}</p>
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-white/65">{reply.body}</p>
+                  </li>
+                ))}
+              </ul>
+            </section>
 
             <div className="page-card mt-12 rounded-2xl p-6 sm:p-8">
               <h2 className="text-lg font-semibold text-white">Need a live answer?</h2>

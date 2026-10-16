@@ -1,14 +1,16 @@
 import { LogoMark } from './LogoMark'
-import {
-  OFFICIAL_DESTINY_LINKS,
-  SITE_GUIDE_LINKS,
-  SITE_PAGE_LINKS,
-} from '../data/links'
+import { SITE_GUIDE_LINKS, SITE_PAGE_LINKS } from '../data/links'
 import { SITE_NAME } from '../data/site'
 
 type SiteFooterProps = {
   currentPath?: string
 }
+
+const LEGAL_LINKS = [
+  { to: '/privacy', label: 'Privacy' },
+  { to: '/terms', label: 'Terms' },
+  { to: '/refunds', label: 'Refunds' },
+] as const
 
 function normalizePath(path?: string) {
   if (!path) return ''
@@ -24,7 +26,7 @@ function isCurrent(to: string, currentPath?: string) {
 }
 
 /**
- * Site footer with page / guide / official Destiny 2 links (crawl-friendly).
+ * Site footer with page / guide / legal links.
  * XML sitemap remains at /sitemap.xml — not shown as an on-page “sitemap” section.
  */
 export function SiteFooter({ currentPath }: SiteFooterProps) {
@@ -107,54 +109,28 @@ export function SiteFooter({ currentPath }: SiteFooterProps) {
 
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-white/45">
-                Official Destiny 2
+                Legal
               </p>
               <ul className="mt-3 space-y-2 text-sm text-white/65">
-                {OFFICIAL_DESTINY_LINKS.map((l) => (
-                  <li key={l.href}>
+                {LEGAL_LINKS.map((l) => (
+                  <li key={l.to}>
                     <a
-                      href={l.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-colors hover:text-white"
+                      href={l.to}
+                      aria-current={isCurrent(l.to, path) ? 'page' : undefined}
+                      className={
+                        isCurrent(l.to, path)
+                          ? 'font-medium text-white'
+                          : 'transition-colors hover:text-white'
+                      }
                     >
                       {l.label}
                     </a>
                   </li>
                 ))}
               </ul>
-              <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/55">
-                <li>
-                  <a href="/privacy" className="hover:text-white">
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a href="/terms" className="hover:text-white">
-                    Terms
-                  </a>
-                </li>
-                <li>
-                  <a href="/refunds" className="hover:text-white">
-                    Refunds
-                  </a>
-                </li>
-              </ul>
             </div>
           </nav>
         </div>
-
-        <p className="mt-10 border-t border-z-soft/10 pt-6 text-xs text-white/55">
-          © {new Date().getFullYear()} {SITE_NAME}. Not affiliated with Bungie or Destiny 2.
-          Indexed pages are listed in{' '}
-          <a
-            href="/sitemap.xml"
-            className="text-white/65 underline-offset-2 hover:text-white hover:underline"
-          >
-            sitemap.xml
-          </a>
-          .
-        </p>
       </div>
     </footer>
   )

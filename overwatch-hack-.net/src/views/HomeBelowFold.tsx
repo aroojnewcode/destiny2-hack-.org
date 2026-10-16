@@ -205,7 +205,7 @@ export function HomeBelowFold() {
               </div>
               <a
                 href={guidePath('destiny-2')}
-                className="mt-8 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-white hover:text-white/80"
+                className="cta-gradient mt-8 inline-flex w-fit items-center justify-center gap-1.5 rounded-full px-6 py-3 text-sm font-medium text-white"
               >
                 See Destiny 2 product details
                 <ArrowRight className="h-4 w-4" strokeWidth={1.75} />
@@ -229,7 +229,7 @@ export function HomeBelowFold() {
                 </p>
               </div>
               <CheckoutLink className="cta-gradient mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90 sm:w-fit">
-                Get Destiny 2 Hack license
+                Get Destiny 2 Hacks license
               </CheckoutLink>
             </div>
           </div>
